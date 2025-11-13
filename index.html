@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// 检查LocalStorage
+		let savedLang = localStorage.getItem('userLang');
+		
+		if(savedLang) {
+		redirectToPage(savedLang);
+		} else {
+		const userLang = navigator.language || navigator.userLanguage;
+		if(userLang.includes('zh')) {
+			redirectToPage('zh');
+		} else {
+			redirectToPage('en');
+		}
+		}
+
+		// 手动切换并保存设置
+		window.switchToEnglish = function() {
+		localStorage.setItem('userLang', 'en');
+		redirectToPage('en');
+		}
+
+		window.switchToChinese = function() {
+		localStorage.setItem('userLang', 'zh');
+		redirectToPage('zh');
+		}
+
+		// 重定向到相应页面
+		function redirectToPage(lang) {
+			const currentPath = window.location.pathname;
+			const hash = window.location.hash; // 获取锚点
+
+			let newPath;
+			if(lang === 'zh') {
+				newPath = '/index_zh.html';
+			} else {
+				newPath = '/index.html';
+			}
+
+			if(currentPath !== newPath) {
+				window.location.href = newPath + hash; // 附加锚点
+			}
+		}
+	});
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WGXZ0EY98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5WGXZ0EY98');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="hi I'm Yu Xiao">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Yu Xiao's Portfolio</title>
+
+<!-- FAVICON -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- STYLES -->
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/plugins.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
+<!-- /STYLES -->
+
+</head>
+
+<body> 
+	
+	<!-- PRELOADER -->
+	<div id="preloader">
+		<div class="loader_line"></div>
+	</div>
+	<!-- /PRELOADER -->
+	
+	<!-- WRAPPER ALL -->
+	<div class="yu_all_wrap" data-magic-cursor="hide"> 
+			
+		<div class="dodo_tm_one_page_wrapper">
+		
+			<!-- MOBILE MENU -->
+			<div class="yu_topbar">
+				<div class="topbar_inner">
+					<div class="logo" data-type="image"> <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
+						<a class="image" href="#"><img src="img/logo/logo.png" alt="" /></a>
+						<a class="text" href="#"><span>X.Yu</span></a>
+					</div>
+					<div class="i18n">
+						<p><a href="javascript:switchToChinese();"><span class="i18nCN">中文版</span></a></p>
+					</div>
+					<div class="trigger">
+						<div class="hamburger hamburger--slider">
+							<div class="hamburger-box">
+								<div class="hamburger-inner"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="yu_mobile_menu">
+				<div class="inner">
+					<div class="wrapper">
+						<div class="avatar">
+							<div class="image" data-img-url="img/about/1.jpg"></div>
+						</div>
+						<div class="menu_list">
+							<ul class="anchor_nav">
+								<li class="current"><a href="#home">Home</a></li>
+								<li><a href="#experience">Experiences</a></li>
+								<li><a href="#skills">Skills</a></li>
+								<li><a href="#portfolio">Portfolio</a></li>
+								<li><a href="#resume">Resume</a></li>
+							</ul>
+						</div>
+						<div class="i18n">
+							<p><a href="javascript:switchToChinese();"><span class="i18nCN">中文</span></a> | Eng</p>
+						</div>
+						<div class="social">
+							<ul>
+								<li><a href="https://www.linkedin.com/in/yushaw" target="_blank" title="Linkedin"><img class="svg" src="img/svg/social/linkedin.svg" alt="" /></a></li>
+								<li><a href="https://github.com/yushaw" target="_blank" title="Github"><img class="svg" src="img/svg/social/github.svg" alt="" /></a></li>
+								<li><a href="https://www.instagram.com/yushaw/" target="_blank" title="Instagram"><img class="svg" src="img/svg/social/instagram.svg" alt="" /></a></li>
+							</ul>
+						</div>
+						<div class="copyright">
+							<p>Crafted with ❤</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /MOBILE MENU -->
+
+			<!-- SIDEBAR -->
+			<div class="yu_sidebar">
+				<div class="sidebar_inner">
+					<div class="author">
+						<div class="image">
+							<img src="img/thumbs/1-1.jpg" alt="" />
+							<div class="main" data-img-url="img/about/1.jpg"></div>
+						</div>
+						<div class="name">
+							<h3><span>Yu Xiao<span class="back">Yu Xiao</span></span></h3>
+						</div>
+					</div>
+					<div class="menu scrollable">
+						<ul class="anchor_nav">
+							<li class="current"><a href="#home">Home</a></li>
+							<li><a href="#experience">Experiences</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#portfolio">Portfolio</a></li>
+							<li><a href="#resume">Resume</a></li>
+						</ul>
+					</div>
+					<div class="i18n">
+						<p><a href="javascript:switchToChinese();"><span class="i18nCN">中文</span></a> | Eng</p>
+					</div>
+					<div class="copyright">
+						<div class="social">
+							<ul>
+								<li><a href="https://www.linkedin.com/in/yushaw/" target="_blank" title="Linkedin"><i class="icon-linkedin-1"></i></a></li>
+								<li><a href="https://github.com/yushaw" target="_blank" title="Github"><i class="icon-github-circled-alt2"></i></a></li>
+								<li><a href="https://www.instagram.com/yushaw/" target="_blank" title="Instagram"><i class="icon-instagram-3"></i></a></li>
+							</ul>
+						</div>
+						<div class="text">
+							<p>Crafted by Yu with ❤</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /SIDEBAR -->
+
+			<!-- MAINPART -->
+			<div class="yu_mainpart">
+				<div class="mainpart_inner">
+
+					<!-- HOME -->
+					<div class="yu_section animated" id="home">
+						<div class="yu_home">
+							<div class="tm_content">
+								<div class="details">
+									<div class="left">
+										<div class="title">
+											<h3>Hi, I'm <span class="blueColor">Yu!</span></h3>
+											<h3>
+												<span class="cd-headline rotate-1"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+													<span class="cd-words-wrapper">
+													  <b class="is-visible">Product Manager</b>
+													  <b>Scrum Master</b>
+													  <b>Product Owner</b>
+													  <b>Designer</b>
+													  <b>Coder</b>
+													  <b>Gadget freak</b>
+													  <b>Lifelong Learner</b>
+													</span>
+												</span>
+											</h3>										
+										</div>
+										<div class="subtitle">
+											<p>I'm a passionate, curious and experienced product manager<span class="blueColor"></span>. I have a strong interest in tools and AI-assisted process automation.</p>
+										</div>
+										<div class="buttons">
+											<div class="yu_button">
+												<a class="anchor" href="#about">Wanna Know More?</a>
+											</div>
+											<div class="yu_button" data-style="border">
+												<a href="mailto:shawonline@gmail.com">Let's talk</a>
+											</div>
+										</div>
+										<div class="info">
+											<ul>
+												<li><a href="tel:+61413310596">04 1331 0596</a></li>
+												<li><a href="mailto:shawonline@gmail.com">shawonline@gmail.com</a></li>
+												<li><a class="href_location">Acton, Canberra</a></li>
+												<li><a href="https://www.linkedin.com/in/yushaw/" target="_blank">Linkedin</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="right">
+										<img class="career-photo" src="img/about/2.jpg" alt="" />
+									</div>
+								</div>
+								<div class="scrolldown">
+									<div class="chevron"></div>
+									<div class="chevron"></div>
+									<div class="chevron"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /HOME -->
+
+					<!-- ABOUT -->
+					<div class="yu_section" id="about">
+						<div class="yu_about">
+							<div class="tm_content">
+								<div class="yu_biography">
+									<div class="left">
+										<div class="title">
+											<span class="mini">- Nice to meet you!</span>
+											<h3 class="name">Yu Xiao</h3>
+											<span class="job">
+												<span class="cd-headline rotate-1"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+													<span class="blc">Product Manager -</span>
+													<span class="cd-words-wrapper">
+													  <b class="is-visible">Problem Solver</b>
+													  <b>Detail Oriented</b>
+													  <b>Data Driven</b>
+													  <b>Perfectionist</b>
+													</span>
+												</span>
+											</span>
+										</div>
+										<div class="yu_button">
+											<a class="anchor" href="#portfolio">My Previous Works</a>
+										</div>
+									</div>
+									<div class="right">
+										<div class="text">
+											<p>Hello there! My name is <span class="yellowColor">Yu Xiao</span>, a seasoned product manager with an 8-year tenure and a background in computer science, just finished my Master of machine learning at the Australian National University. I've honed my skills across sectors such as 2C, 2B, SaaS, and hardware, exhibiting proficiency in customer-centric product development and data-driven strategy.</p>
+											<p>My hands-on experience embraces the full cycle of internet product development, from inception to iterative enhancements. I've led a diverse range of products, notably online design editors and intelligent parking systems, demonstrating my interest and expertise in tool-based products.</p>
+											<p>As a rigorous logical thinker, I've successfully led a product & research team of 15 members, driving a significant increase in user engagement and retention. I'm also a <a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank">Product Owner certified professional</a>, proficient in leading agile projects from concept to reality.</p>
+											<p>Passionate about infusing AI into tool products, I'm eager to leverage my skills to foster growth and customer satisfaction in a fast-paced tech company.</p>
+										</div>
+									</div>
+								</div>
+								<div class="yu_counter">
+									<ul>
+										<li>
+											<div class="list_inner">
+												<h3>8</h3>
+												<span>Years of Experience</span>
+											</div>
+										</li>
+										<li>
+											<div class="list_inner">
+												<p class="Quadrupled">Quadrupled</p>
+												<span>Active User Count</span>
+											</div>
+										</li>
+										<li>
+											<div class="list_inner">
+												<h3>25%</h3>
+												<span>Increased revenue</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="yu_experience" id="experience">
+								<div class="tm_content">
+									<div class="yu_title">
+										<h3>Experiences</h3>
+										<span>- Education</span>
+									</div>
+									<div class="list">
+										<ul>
+											<li>
+												<div class="list_inner anu" id="anu">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">Feb. 2021 - July 2023</span>
+															<h3><a href="https://www.anu.edu.au/" target="_blank">Australian National University</a></h3>
+														</div>
+														<div class="place">
+															<h6>Master</h6>
+															<span class="program">Machine Learning</span>
+														</div>
+													</div>
+													<div class="text">
+														<p>• GPA: Distinction (6/7)</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												
+												<div class="list_inner hust">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">Sep. 2007 - June 2011</span>
+															<h3><a href="http://english.hust.edu.cn/" target="_blank">Huazhong University of Science and Technology</a></h3>
+														</div>
+														<div class="place">
+															<h6>Bachelor</h6>
+															<span class="program">Optoelectronic Information</span>
+														</div>
+													</div>
+													<div class="text">
+														<p>• <a href="https://www.usnews.com/education/best-global-universities/huazhong-university-of-science-technology-505190#rankings" target="_blank">Ranks 6th</a> in mainland China</p>
+														<p>• GPA: 78.78/100</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_experience work">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- Working Experience</span>
+									</div>
+									<div class="list">
+										<ul>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2022.11 - 2023.02</span>
+															<h3>Product Manager (Intern)</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.mochilabs.com.au/" target="_blank">Mochi Labs</a></span>
+															<p>Canberra</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Note: it's an intern job during summer vacation;</p>
+														<p>• Contribute to developing and organizing Business plans, product vision, Roadmaps, User Stories, Personas and more. My role involves streamlining product development processes and ensuring optimal user experience.</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2020.07 - 2022.07</span>
+															<h3>Product Manager</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.isheji.com/" target="_blank">iSheji.com</a></span>
+															<p>Beijing</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Led cross-functional team in the reconstruction of the editor, effectively communicating with stakeholders to balance the needs of both consumer and business users;</p>
+														<p>• Redesigned textbox and image features, generating a 30% increase in template usage;</p>
+														<p>• Led the SDK program for key account customers, resulting in a 25% increase in customer satisfaction.</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2018.06 - 2019.09</span>
+															<h3>Product Lead - Web</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.chuangkit.com/" target="_blank">chuangkit.com</a></span>
+															<p>Beijing</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Coordinated the entire web-side product architecture and Increased active user count fourfold during the working period;</p>
+														<p>• Led the transition of business model to "Subscription + content consumption", increasing revenue by 15%;</p>
+														<p>• Optimized editor experience and module functions with user-centric design, reducing user churn rate by 20% and increasing NPS score to 78;</p>
+														<p>• Launched artistic text effects and GIF image generation, achieving 150,000 hits in the first week.</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2015.08 - 2018.04</span>
+															<h3>Product Director</h3>
+														</div>
+														<div class="place">
+															<span>Sinosteel City Dev. Ltd.</span>
+															<p>Beijing</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Participated in the development of "Qingpark" intelligent parking platform from scratch;</p>
+														<p>• Managed R&D department (14 people) and project progress;</p>
+														<p>• Collaborated with sales and operation teams during the bidding and project implementation of more than 20 smart car parks, using strong communication and negotiation skills to ensure successful project execution, generating 10,000 parking bills per day.</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2013.06 - 2015.07</span>
+															<h3>Product Manager</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.drpeng.com.cn/" target="_blank">Dr. Peng Group ltd.</a></span>
+															<p>Beijing</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Oversaw commercial router cloud management, including business information, portal page content, and membership system, increasing business information accuracy by 15%;</p>
+														<p>• Conducted training sessions for sales and support teams on the usage and features of the commercial routers' cloud management system, ensuring clear communication and understanding of the product.</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2012.03 - 2013.05</span>
+															<h3>Product Assistant</h3>
+														</div>
+														<div class="place">
+															<span>Hongtu Wuhan ltd.</span>
+															<p>Wuhan</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Optimized cloud platform sales process and user experience;</p>
+														<p>• Improved the "task/event" module to track daily sales team work, boosting team productivity by 15%.</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /ABOUT -->
+
+						<!-- Skills -->
+						<div class="yu_section" id="skills">
+			
+							<div class="yu_services">
+								<div class="tm_content">
+									<div class="yu_service_title">
+										<div class="yu_title">
+											<span>- Skills</span>
+											<h3>My Skills</h3>
+										</div>
+									</div>
+									<div class="service_list">
+										<ul>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>01</span>
+															<h3><a class="anchor" href="#ProductArchitecture">Product Management</a></h3>
+														</div>
+														<div class="text">
+															<p>Demonstrated success in developing product road maps, managing cross-functional teams, and ensuring on-time project completion;</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#ProductArchitecture"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>	
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>02</span>
+															<h3><a class="anchor" href="#UsabilityTesting">Requirement Gathering</a></h3>
+														</div>
+														<div class="text">
+															<p>Proficient in mining requirements scenarios, conducting user research, and producing comprehensive requirement documents;</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#UsabilityTesting"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>03</span>
+															<h3><a class="anchor" href="#DataAnalysis">Data Analysis & Visualization</a></h3>
+														</div>
+														<div class="text">
+															<p>Adept at using data analytics tools such as Tableau, Excel, and Google Analytics to drive product improvements and decision-making;</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#DataAnalysis"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>04</span>
+															<h3><a class="anchor" href="#Prototyping">Prototyping & UX Design</a></h3>
+														</div>
+														<div class="text">
+															<p>Experienced in creating high and low fidelity prototypes, iterating on designs, and optimizing user experience;</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#Prototyping"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>	
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>05</span>
+															<h3><a class="anchor" href="#pspo">Agile Project Management</a></h3>
+														</div>
+														<div class="text">
+															<p>Skilled in facilitating Agile and Scrum methodologies, driving cross-functional collaboration, promoting continuous improvement, and ensuring timely delivery of high-quality, value-driven products. (with PSM & PSPO Certification)</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#pspo"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<img class="popup_image" src="img/service/7.jpg" alt="" />
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>06</span>
+															<h3><a class="anchor" href="#ArtificialIntelligence">Technical Expertise</a></h3>
+														</div>
+														<div class="text">
+															<p>Solid background in computer science and machine learning, experienced in Python, SQL and Java programming languages. Familiar with OpenAI api, Langchain, Stable Diffusion and related applications.</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#ArtificialIntelligence"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_experience">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- Certifications & Languages</span>
+									</div>
+									<div class="list">
+										<ul>
+											
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<h3>Chinese/Mandarin</h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Native</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<h3>English</h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• IELTS: 7 CEFR: C1 as of 2020</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner pspo" id="pspo">
+													<div class="short">
+														<div class="job">
+															<h3><a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank">PRO. Scrum Product Owner™ II</a></h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Issued on 19 June 2023</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner psm" id="psm">
+													<div class="short">
+														<div class="job">
+															<h3><a href="https://www.credly.com/badges/f4270709-fd2b-4214-99a3-7bca29ce9be3/" target="_blank">PRO. Scrum Master™ II</a></h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• Issued on 14 June 2023</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_softwares" id="softwares">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- Softwares & Tools</span>
+										<h5>Proficient in:</h5>
+									</div>
+									<div class="softwares_inner">
+								<ul>
+									<li>
+										<div class="list_inner">
+											<a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank" title="Scrum Product Owner"><img src="img/softwares/-1.png" alt="" /></a>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/0.2.png" alt="SQL" title="SQL"/>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/0.3.png" alt="" title="Python"/>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/1.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/2.png" alt="" title="Figma" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/3.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/3.5.png" alt="" title="Visio"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/4.png" alt="" title="OmniGraffle"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/4.8.png" alt="" title="Project"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.png" alt="" title="OmniPlan"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.5.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.8.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/6.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/7.png" alt="" title="Photoshop"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/7.5.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/8.png" alt="" />
+										</div>
+									</li>
+								</ul>
+							</div>
+								</div>
+							</div>
+					</div>
+					<!-- /Skills -->
+				
+
+					<!-- PORTFOLIO -->
+					<div class="yu_section" id="portfolio">
+						<div class="yu_portfolio">
+							<div class="tm_content">
+								<div class="yu_portfolio_title">
+									<div class="yu_title">
+										<span>- Portfolio</span>
+										<h3>Product-Relevant Works</h3>
+										<p>I'm passionate about my work, feel free to click them to see more details.</p>
+										<p>Updating...</p>
+									</div>
+								</div>
+								<div class="portfolio_list_flex">
+									<ul>
+
+										<li>
+											<div class="list_inner" id="ProductArchitecture">
+												<div class="image-wrapper">
+													<img src="img/portfolio/ProductArchitecture.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Product Architecture</span>
+													<h3 class="title"><a class="line_effect" href="https://www.figma.com/file/JhzxAYMuDIHvPJVW5APo7w/Online-Design-Editor-Overall-Product-Structure?node-id=0%3A1&t=UMRnEmE8faWzRspS-1" target="_blank">Case: Online Design Editor (2019)</a></h3>
+													<span class="tools">Tool: Figma</span>
+													<p>*Note: it's a link to <a href="https://www.figma.com/file/JhzxAYMuDIHvPJVW5APo7w/Online-Design-Editor-Overall-Product-Structure?node-id=0%3A1&t=UMRnEmE8faWzRspS-1" target="_blank">the Figma file</a>.</p>
+													<P>• A overall product structure for the reconstruction of an online editor.</P>
+													<p>• The document offers a comprehensive introduction to the editor's architecture and overall product direction, starting from its fundamental elements. The goal is to align product philosophies and directions across departments and roles, minimizing collaboration issues due to misunderstandings in product or technical aspects. It also helps technical colleagues grasp key features for better technical preparation and organization.													</p>
+												</div>     
+											</div> 
+										</li>
+
+										<li>
+											<div class="list_inner" id="ArtificialIntelligence"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/ArtificialIntelligence.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Artificial Intelligence</span>
+													<h3 class="title "><a class="line_effect portfolio_popup" href="https://github.com/yuhua6379/CyberNexus/blob/main/README_en.md" target="_blank">Personal Project: Large Language Model-Driven Virtual World and Characters (2023-present)</a></h3>
+													<span class="tools">Tools: PyCharm, Git, Python, ChatGPT, Vector Database</span>
+													<p>Project Address: <a href="https://github.com/yuhua6379/CyberNexus/blob/main/README_en.md" target="_blank">Github project</a></p>
+													<p>• CyberNexus is a virtual world project, driven by the natural language processing and inference abilities of a large language model for character behavior and interaction;</p>
+													<p>• This project utilizes the ChatGPT API, prompt engineering, and embedding databases to provide characters with thinking and memory abilities;</p>
+													<p>• Users or characters in the game can communicate with other characters in the world; you can see how basic characters think and communicate to achieve goals in <a href="https://github.com/yuhua6379/CyberNexus/blob/main/showcase/sample_conversation_en.md" target="_blank">this chat record example</a>.</p>
+												</div>
+											</div>
+										
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: PyCharm, Git, Python, ChatGPT, Vector Database</p>
+														</div>
+													</div>
+													<div>
+														<h3>Project Background</h3>
+														<p>CyberNexus is a virtual world project, aimed at driving characters in the world through large language model's natural language processing and limited inference abilities. Using OpenAI's ChatGPT API, prompt engineering, and embedding database, it grants characters thinking and memory skills.</p>
+														<h3>Project Address</h3>
+														<p>The project address is: <a href="https://github.com/yuhua6379/CyberNexus" target="_blank">CyberNexus</a>.</p>
+														<p>You can try installing and running it yourself, or if you just want to see the effect, you can find some records we have debugged in <a href="https://github.com/yuhua6379/CyberNexus/blob/main/showcase/sample_conversation.md" target="_blank">this chat record example</a>.</p>
+														<h3>Goals and Purpose</h3>
+														<p>Build self-driven robots, enabling real-time interaction between characters, fostering virtual community building, and enhancing the realism of interaction.</p>
+														<h3>Product Features</h3>
+														<p>・Ability to plan, interact, remember and reflect characters;</p>
+														<p>・Creation of characters, and corresponding bots;</p>
+														<p>・Characters' memory and introspection abilities;</p>
+														<p>・Interaction, chatting, etc., between two/multiple characters.</p>
+														<h3>Overall Product Logic</h3>
+														<p>If the image is too small, you can click on the image to view it in a new window.</p>
+														<a href="img/portfolio/howitworks.png" target="_blank"><img style="max-width: 700px;" src="img/portfolio/howitworks.png" alt="" /></a>
+														<h3>Next Steps</h3>
+														<p>The CyberNexus project has built a vibrant virtual world through a large language model; the next step is to further enhance characters' abilities, build a virtual community, and realize richer functions.</p>
+													</div>
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="Prototyping">
+												<div class="image-wrapper">
+													<img src="img/portfolio/Prototyping.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Prototyping</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">Multi-Platform Prototyping Cases (2014-2021)</a></h3>
+													<span class="tools">Tools: Axure, Figma, Sketch</span>
+													<p>• This presentation includes multiple show cases of prototyping for different platforms, which includes desktop, SaaS, mobile, web and so on.</p>
+													<p>• The choice between Hi-Fi and Low-Fi prototypes depends on the current stage of the product and the intended audience.</p>												
+												</div>     
+											</div> 
+	
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: Axure, Figma, Sketch</p>
+														</div>
+													</div>
+													<div>
+														<h3>Case 1: Content Management System Design (2021)</h3>
+														<div class="textbox">
+															<p>Product Type: Admin Panel</p>
+															<p>Platform: Desktop</p>
+														</div>
+														<h4>Overall Structure and main process</h4>
+														<img style="max-width: 600px;" src="img/portfolio/cms_structure.png" alt="" />
+														<p>CMS for photos management from scratch, it's a cross-functional platform for different departments and involves different processes of uploading or delivering photos.</p>
+														<h4>Workflows</h4>
+														<img style="max-width: 400px;" src="img/portfolio/cms_workflow1.png" alt="" />
+														<img style="max-width: 400px;" src="img/portfolio/cms_workflow2.png" alt="" />
+														<p>Organize complete and detailed workflows with colleagues from multiple departments.</p>
+														<h4>Prototype</h4>
+														<p>Use Axure to design and implement the prototype for the platform, which includes multiple modules and pages.</p>
+														<img style="max-width: 600px;" src="img/portfolio/cms_prototype.png" alt="" />
+														
+														<h3>Case 2: File Management (2018)</h3>
+														<div class="textbox">
+															<p>Product Type: SaaS</p>
+															<p>Platform: Desktop</p>
+														</div>
+														<p>A simple demonstration of the file management feature for SaaS, done by Figma.</p>
+														<img style="max-width: 600px;" src="img/portfolio/SaaS.png" alt="" />
+
+														<h3>Case 3: Mobile Image Editor - WeChat Mini-Program (2018)</h3>
+														<div class="textbox">
+															<p>Product Type: WeChat Mini-Program</p>
+															<p>Platform: Mobile</p>
+														</div>
+														<p>The prototype of online image editor for WeChat platform, which includes features like Crop, Resize, Text, Drawing Tools, etc.</p>
+														<img style="max-width: 600px;" src="img/portfolio/WeChat_Mini.png" alt="" />
+
+														<h3>Case 4: Design Sharing (2020)</h3>
+														<div class="textbox">
+															<p>Product Type: Cross-platform Functionality</p>
+															<p>Platform: Desktop & App & WeChat Mini-Program</p>
+														</div>
+														<p>This is a relatively simple but complex feature, it is a cross-platform feature that involves complex permission checks. </p>
+														<img style="max-width: 600px;" src="img/portfolio/Design_Sharing.png" alt="" />
+													</div>
+	
+											</div>
+										</li>
+										
+
+										<li>
+											<div class="list_inner" id="DataAnalysis">
+												<div class="image-wrapper">
+													<img src="img/portfolio/DataAnalysis.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Data Analysis</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">Case: Navigating Seasonal User Engagement Decline (2018)</a></h3>
+													<span class="tools">Tools: Tableau, MySQL, Google Analytics</span>
+													<p>• This case study explores a significant drop in user engagement during summer, revealing notable declines in secondary cities and among educational users. </p>
+													<p>• The summer vacation was identified as a key factor through data analysis and user interviews. Responsive strategies such as seasonal content, user retention programs, and a feedback mechanism were formulated. </p>
+												</div>     
+											</div> 
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: Tableau, MySQL, Google Analytics</p>
+														</div>
+													</div>
+													<div>
+														<h3>Background</h3>
+														<p>In July and August, we observed an unexpected significant drop (more than 10%) in our active user base. Recognizing the potential implications, I was tasked to understand the reasons behind this decline and formulate responsive strategies.</p>
+														<h3>Problem Identification</h3>
+														<p>I initially tried to identify potential problems through direct communication with a group of regular users. However, these discussions with a dozen users did not pinpoint any definitive issues, which prompted a deeper data-driven analysis.</p>
+														<h3>Data Analysis & Findings</h3>
+														<p>By leveraging Google Analytics and our backend data, I carried out a comprehensive user persona analysis.</p>
+														<img src="img/portfolio/DataAnalysis&Visualization.png" alt="" />
+														<p>The analysis revealed two key observations:</p>
+														<ul>
+															<li>1. The decrease in active users was most significant in secondary cities, with negligible changes in primary cities.</li>
+															<li>2. A substantial drop-off was noticed among our educational or campus users.</li>
+														</ul>
+														<h3>Insight & Hypothesis</h3>
+														<p>These patterns led to the hypothesis that the summer vacation, typical in July and August, might be affecting our user engagement, particularly among educational users.</p>
+														<h3>Validation</h3>
+														<p>To validate this hypothesis, I conducted focused interviews with users from secondary cities and the educational sector. The responses corroborated the hypothesis, establishing summer vacation as the key driver for the drop-off in usage.</p>
+														<h3>Solution & Strategy</h3>
+														<p>Armed with these insights, we crafted a set of strategies to counter the impact of such seasonal variations:</p>
+														<ul>
+															<li>1. <b>Seasonal Content Strategy</b>: Introduced seasonal themes and functionalities aimed at non-academic user engagement during summer months.</li>
+															<li>2. <b>User Retention Programs</b>: Launched targeted retention programs such as summer contests, rewards, and interactive events to keep users engaged even during vacation periods.</li>
+															<li>3. <b>User Feedback Loop</b>: Strengthened the feedback mechanism to understand user needs better and adapt our offerings accordingly.</li>
+														</ul>
+														<h3>Conclusion</h3>
+														<p>By incorporating a mixed approach of user interaction, thorough data analysis, and focused user interviews, we not only understood the reasons behind the sudden drop in our active user base but also devised effective strategies to mitigate the impact.</p>
+													</div>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										
+
+										<li>
+											<div class="list_inner" id="CompetitorAnalysis">
+												<div class="image-wrapper">
+													<img src="img/portfolio/CompetitorAnalysis.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Competitor Analysis</span>
+													<h3 class="title"><a class="line_effect" href="https://www.figma.com/file/XPSfOTdijNoJN7f9Db1xxH/Overall-(Note-Editor)?node-id=7%3A17051&t=twCu8McFggVeAfp0-1" target="_blank">Case: Analysis of a CMS platform for Kindergarten (2022)</a></h3>
+													<span class="tools">Tools: Figma, Mind Mapping</span>
+													<p>*Note: it's a link to <a href="https://www.figma.com/file/XPSfOTdijNoJN7f9Db1xxH/Overall-(Note-Editor)?node-id=7%3A17051&t=twCu8McFggVeAfp0-1" target="_blank">the Figma file</a>.</p>
+													<p>• A initial analysis of a Knowledge/Content Management System.</p>
+													<p>• Leveraging extensive product usage, company financial, and industry insights, I summarized the product's architecture, design principles, user base, and revenue. Then offer recommendations for improving product architecture and module components.</p>
+												</div>
+											</div>
+										</li>
+									
+										
+										<li>
+											<div class=" list_inner" id="DataManagement"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/DataManagement.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Data Management</span>s
+													<h3 class="title "><a class="line_effect portfolio_popup">Case: Data Management System for SaaS (2016)</a></h3>
+													<span class="tools">Tools: Excel, Figma</span>
+													<p>• The building process of the Data tracking, purifying, analysing and presentation system.</p>
+													<p>• Including: key metrics Identification, breaking down to basic data list, data flow design, data analysis, and finally, the data presentation.</p>
+												</div>
+											</div>
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: Excel, Figma</p>
+														</div>
+													</div>
+													<div>
+														<h3>Background</h3>
+														<p>After the fundamental development of our product, we shifted our focus to meticulous operation and analysis of user behavior. Consequently, I was appointed to organize the basic data management system of the product.</p>
+														<h3>Communication and Indicator Determination</h3>
+														<p>Through cross-departmental communication, I have been able to identify the data indicators of primary concern to various stakeholders. This required a deep understanding of each department's operations and goals, as well as the ability to translate these into actionable data queries.</p>
+														<p>For example: In a project with the marketing team, I identified their need for data on customer acquisition cost, retention rate, and lifetime value. By defining these key metrics, I enabled the marketing team to measure the effectiveness of different strategies and campaigns.</p>
+														<h3>Breakdown and Dissection of Data Indicators</h3>
+														<p>I dissected each high-level metric into underlying base data, such as user behaviors and product performance. This process allowed for granular insights and better problem diagnosis.</p>
+														<p>For example: I broke down the customer acquisition cost into factors such as conversion rate, and number of new customers acquired. This provided the team with insights on which factor to optimize to lower the cost.</p>
+														<h3>Event Tracking and Data Table Organization</h3>
+														<p>Designing the infrastructure for data collection was a crucial task. I planned and implemented event tracking mechanisms that capture necessary data points in an organized and logical manner.</p>
+														<img style="max-width: 400px;" src="img/portfolio/eventtracking.png" alt="" />
+														<h3>Design of Backend Data Presentation</h3>
+														<p>I ensured that the processed data was presented in an easily understandable and actionable format. Using data visualization tools, I created dashboards that effectively represented data and highlighted key insights.</p>
+													</div>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="Persona"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/Persona.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Persona</span>
+													<h3 class="title "><a class="line_effect portfolio_popup">Case: Personas for Kindergarten (2023)</a></h3>
+													<span class="tools">Tools: Notion, Questionnaire</span>
+													<p>• Personas for teachers of the Kindergarten.</p>
+													<P>• The research was done by collecting information from social media & forum, talk to my teacher friends, send them questionnaires, collecting their documents and daily schedules.</P>
+													<p>• This persona is intended for an early-stage product, so it is quite general in nature.</p>
+												</div>
+											</div>
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: Notion, Questionnaire</p>
+														</div>
+													</div>
+													<div>
+														<h3>Background</h3>
+														<p>A persona of a teacher of Kindergarten.</p>
+														<p>This persona is intended for an early-stage product, so it is quite general in nature.</p>
+														<p>However, it's enough for the current user stories with huge details</p>
+														<h3>Content</h3>
+														<img style="max-width: 600px;" src="img/portfolio/persona-example.png" alt="" />
+													</div>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="UsabilityTesting"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/UsabilityTesting.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Usability Testing</span>
+													<h3 class="title "><a class="line_effect portfolio_popup">Case: Images Background Remover (2019)</a></h3>
+													<span class="tools">Tools: Zoom, Keynote, TeamViewer</span>
+													<p>• We conducted a usability test for our novel online image clipping tool. The test included tasks of varying difficulty levels and was analyzed post-completion. </p>
+													<p>• Key issues identified were the mismatch of expected user interaction, impatience during prolonged tasks, and difficulties in adjustment when the boundary was exceeded. Based on these insights, we improved function guidance, backend processing speed, and the positioning and logic of interactive controls.</p>
+												</div>
+											</div>
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>Tools: Zoom, Keynote, TeamViewer</p>
+														</div>
+													</div>
+													<div>
+														<h3>Background</h3>
+														<p>After the completion of our core feature for image clipping, we ventured into creating an online image clipping tool. At that time, similar products were scarce on the market, leading to uncertainties about user acceptance and product understanding. Therefore, we decided to conduct usability testing with actual users.</p>
+														<h3>Team and Responsibilities</h3>
+														<p>Our usability testing was organized in collaboration with colleagues from User Operations and Design. I was responsible for designing the overall testing process, key data metrics, writing test questions/cases, and refining the interactive details with the design team. Colleagues from User Operations purposefully recruited 3 designer users and 3 general users from various industries.</p>
+														<h3>Testing Task Instructions</h3>
+														<p>I selected four images of ascending difficulty levels as tasks.</p>
+														<p>I assigned related process tasks like uploading & downloading image, adjust size of the brush, etc.</p>
+														<p>Task Instruction Sheet:</p>
+														<img style="max-width: 400px;" src="img/portfolio/ut_tasks.png" alt="" />
+														<p>The entire process was video-recorded with minimal guidance from the operations team.</p>
+														<h3>Post-Test Analysis</h3>
+														<p>Following the test, we analyzed task completion status, time spent on tasks, and conducted a comparative analysis based on specific scoring.</p>
+														<p>Marks for the process tasks:</p>
+														<img style="max-width: 400px;" src="img/portfolio/ut_tasks_marks.png" alt="" />
+														<h3>Findings</h3>
+														<p>Our analysis revealed the following key insights:</p>
+														<ul>
+															<li>1. Designers tend to handle tasks in a manner similar to Photoshop's mask operation, which did not align with our expected interaction.</li>
+															<img style="max-width: 400px;" src="img/portfolio/ut_failed.png" alt="" />
+															<li>2. User patience significantly diminished when the image clipping process took more than 3 minutes.</li>
+															<li>3. Users were unable to make perfect adjustments when their outlining exceeded the image's boundaries.</li>
+															<li>4. We were worrying about the acceptance of the opacity problem during the process, but the test result indicated fine.</li>
+															<li>5. ...</li>
+														</ul>
+														<h3>Actionable Adjustments</h3>
+														<p>Based on the testing insights, we implemented the following improvements:</p>
+														<ul>
+															<li>1. We provided stronger guidance for the feature: a must-watch video when user entered for the first time, and instructions placed right at the bottom</li>
+															<li>2. We enhanced the backend image clipping processing efficiency to reduce the image clipping time.</li>
+															<li>3. We adjusted the position and logic of the interactive controls.</li>
+															<li>4. ...</li>
+														</ul>
+														<h3>Conclusion</h3>
+														<p>Through continuous iterations and improvements, we strived to provide our users with a more efficient and intuitive online image clipping tool.</p>
+													</div>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="ArtificialIntelligence"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/ArtificialIntelligence.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Artificial Intelligence</span>
+													<h3 class="title"><a class="line_effect" href="https://github.com/yushaw/LocalAgent/blob/master/README_en.md" target="_blank">Personal Project: Local Database-Driven Large Language Model Agent (2023)</a></h3>
+													<span class="tools">Tools: VSCode, Git, Python</span>
+													<p>*Note: it's a link to <a href="https://github.com/yushaw/LocalAgent/blob/master/README_en.md" target="_blank">the Github project</a>.</p>
+													<p>• This project was developed with the aim to master the OpenAI's ChatGPT API, prompt engineering design, and understand embedding databases. </p>
+													<p>• I have created a task-driven Agent that processes local data in a granular manner and generates complex content. Using OpenAI's function call API and Langchain's language model, I have managed to implement prompt design in the standard ReAct format. The aspects yet to be improved include the implementation of "Tree of Thoughts" to handle complex issues, auto-generation of prompts, addressing timeout issues, and expanding the tool library. The project is based on OpenAI, Langchain, and utilizes the Chromadb local database.</p>
+												</div>
+											</div>
+										</li>
+
+
+										<li>
+											<div class="list_inner">
+												<div class="image-wrapper">
+													<img src="img/portfolio/WorkFiles.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">Other Work-related or Daily Docs</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">Other Work-related or Daily Docs</a></h3>
+													<span class="tools">Tools: Obsidian, OmniGraffle, Axure, OmniPlan, Office</span>
+													<p>• Note that docs are mostly written in Chinese and for showcase only.</p>
+													<p>• For more details, feel free to contact me.</p>
+												</div>
+											</div>
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<span class="tools">Tools: Obsidian, OmniGraffle, Axure, OmniPlan, Office</span>
+															<p>Note that docs are mostly written in Chinese and for showcase only.</p>
+															<p>For more details, feel free contact me.</p>
+														</div>
+													</div>
+													<h4>Big little details</h4>
+													<div class="image">
+														<img src="img/portfolio/biglittledetails.png" alt="" />
+														<p>I'm quite into details of the products and love to try new products, and I collect every good detail from various products.</p>
+														<p>I've collected these for years, now I manage them with the help of Obsidian.</p>
+													</div>
+													<h4>Workflow and Sequence Diagram</h4>
+													<div class="image">
+														<img src="img/portfolio/workflow.png" alt="" />
+														<p>Workflow and Sequence Diagram for register a parking lot and paying parking fees</p>
+														<p>Drawn with OmniGraffle.</p>
+													</div>
+													<br>
+													<h4>Project Management</h4>
+													<div class="image">
+														<img src="img/portfolio/ProjectManagement.png" alt="" />
+														<p>Project Plan using OmniPlan and track tasks using the Excel.</p>
+														<p>Old fashioned and nowadays we have much better online Kanban like trello to track project status.</p>
+													</div>
+													<br>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+
+										</li>
+
+										
+
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /PORTFOLIO -->
+					
+
+					<!-- NEWS -->
+					<div class="yu_section" id="news">
+						<div class="yu_news fn_w_sminiboxes">
+							<div class="tm_content">
+								<div class="wrapper">
+									<div class="left fn_w_sminibox">
+										<div class="yu_sticky_section">
+											<div class="yu_title">
+												<span>- Thoughts</span>
+												<h3>Some Relevant Opinions</h3>
+											</div>
+											<div class="yu_button">
+												<a class="anchor" href="#contact">Get in touch</a>
+											</div>
+										</div>
+									</div>
+									<div class="right fn_w_sminibox">
+										<div class="yu_sticky_section">
+											<div class="list">
+												<ul>
+													<li>
+														<img class="popup_image" src="img/news/TeamCollaboration.png" alt="" />
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>July 16, 2020</span>
+																</div>
+																<div class="title">
+																	<h3><a href="#">What Should an Online Team Design Tool Look Like?</a></h3>
+																</div>
+															</div>
+
+
+															<!-- Modalbox Info Start -->
+															<div class="news_hidden_details">
+																<div class="news_popup_informations">
+																	<div class="text">
+																		<!-- directives:[] -->
+																		<a href="https://blog.xiaoyu.io/2020/7-16-%E7%BA%BF%E4%B8%8A%E5%9B%A2%E9%98%9F%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7%E5%BA%94%E8%AF%A5%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/" target="_blank">Click to view the Original Post, in Chinese</a>
+																		<p>* Cover image sourced from <a href="https://dribbble.com/shots/16819588-Peep-Illustrations" target="_blank">Dribbble</a></p>
+																		<br>
+																		<p>This article is a requirements summary for B-end product design that was written while I was working at my previous job last year. At that time, I was solely focused on the editor's experience and had no interest in B-end requirements. After discussing some key requirements with the technical team, I realized that the preparation and workload required during the early stages were quite extensive. Moreover, the core editing functions could not yet support the top-level B-end requirements. Therefore, I did not prioritize this as the main direction for advancement.</p>
+																		<p>Now that a year has passed, I realize that the fundamental logic has not changed, and the core is still centered around the management of the "design process". Therefore, I decided to publish this requirement summary to hold myself accountable. Note that some of the content may have changed since then.</p>
+																		<h3 id="common-problems-with-traditional-design-tools">Common Problems with Traditional Design Tools</h3>
+																		<ol>
+																		<li><p>Management through the file system. The management is focused on the result, rather than the process (root cause).</p></li>
+																		<li><p>Communication requires sending raw files or exporting the final results (images/videos), which is time-consuming and results in a poor user experience.</p></li>
+																		<li><p>Version management is done through files and customized version numbers, leading to disorganized management.</p></li>
+																		<li><p>Long feedback cycles between users and designers. Written emails or oral descriptions are often abstract and difficult to understand. The design process is tedious and not intuitive.</p>
+																		<p>Complex designs often require repeated adjustments and modifications, resulting in multiple iterations. Especially when working across departments or companies, communication issues often lead to unsatisfactory or compromised results in email exchanges.</p></li>
+																		<li><p>Adding, deleting, and synchronizing logo, standard colors, and commonly used materials between teams.</p></li>
+																		<li><p>Lack of design resources, and scattered designs stored in various places on the computer (can be classified as the same problem as 5).</p></li>
+																		</ol>
+																		<h3 id="online-team-design-tools">Online Team Design Tools</h3>
+																		<p>Like product cycle management, the tool should manage the entire design cycle. Design requirements -&gt; Production -&gt; Verification -&gt; Adjustment -&gt; (Verification -&gt; Adjustment) * n -&gt; Output Content.</p>
+																		<p>The goal of online design tools is to solve the "verification -&gt; adjustment" process.</p>
+																		<h4 id="advantages-of-online-tools">Advantages of Online Tools</h4>
+																		<ol>
+																		<li><p>Readability:</p>
+																		<p>The designs are stored in the cloud, allowing for easy access and viewing on smartphones or computers without additional software. The experience for non-designers is excellent.</p></li>
+																		<li><p>Real-time feedback:</p>
+																		<p>All modifications made to a design are reflected in real-time. Apart from the designer, everyone else, such as colleagues assisting with the editing process, bosses reviewing the results, should be seeing the latest updates within seconds after modifications were made.</p>
+																		<p>Even the first party can play the role of a cloud supervisor.</p></li>
+																		<li><p>Interactivity:</p>
+																		<p>Adjustments to the design are highly detailed, and every adjustment requires coordination and communication. Direct editing, commenting, chatting, voice chat, and other forms of online communication are all available.</p>
+																		<p>Third-party solutions can be leveraged or empowered by other relevant products.</p></li>
+																		<li><p>Digital Asset Management:</p>
+																		<p>Design assets can be archived and classified in detail. Search can be performed based on various attributes such as time, popularity, type, scene, label, folder, etc.</p></li>
+																		<li><p>Digital Copyright Content:</p>
+																		<p>Some design tools provide design templates or copyright-related paid content. Integrated into the design tool, it is more convenient to use.</p></li>
+																		<li><p>Design content accumulation:</p>
+																		<p>The system automatically analyzes or allows users to gradually accumulate the team's design resources. For example, brand colors, color palettes, layout styles, commonly used materials, commonly used templates, etc.</p></li>
+																		</ol>
+																		<h4 id="functional-requirements-for-online-design-tools">Functional Requirements for Online Design Tools</h4>
+																		<ol>
+																		<li>Import and export of existing digital assets: B-end design files such as PSD, AI, Sketch, etc., need to be imported into the design tool. Moreover, since most design tool functionalities cannot completely replace PS, AI, etc., the import and export of PSD and AI files is also important;</li>
+																		<li>Core functions: Online design tools need to meet most design needs to ensure usability.</li>
+																		<li>Collaboration: Includes multiple people collaborating in real-time, communication, sharing collaboration chains, etc.;</li>
+																		<li>Permission and personnel management: Editor permissions, design permissions, digital asset permissions, functional permissions, etc.;</li>
+																		<li>Digital asset management: Apart from permissions, flexible content management and content accumulation are the key points to ensure the stickiness of the product. This involves not only storing and categorizing the design files, but also analyzing and summarizing the design content.</li>
+																		</ol>
+																		<p>For example, the system can automatically analyze and organize design resources such as brand colors, color palettes, layout styles, common materials, and templates used by the team. This can be done based on various properties such as time, popularity, type, scene, tag, folder, and more.</p>
+																		<p>In addition, some design tools also provide copyrighted content, design templates, or other related paid content that can be integrated into the design tool itself for more convenient use.</p>
+																		<h4 id="personal-vs-team">Personal vs. Team</h4>
+																		<p>Personal and team are a one-to-many relationship. However, in most small business scenarios, personal and team are actually a one-to-one relationship.</p>
+																		<p>Because we need to accumulate and manage content, we need to correctly place personal designs under the corresponding team. From this perspective, each design needs to belong to a team.</p>
+																		<p>Simply put:</p>
+																		<p>Team -&gt; Project (if any) -&gt; Design</p>
+																		<p>Therefore, from my point of view, the organizational structure of documents in Shimo is chaotic. (But from the perspective of product evolution, it can also be understood.)</p>
+																		<h3 id="a-completely-different-business-model-and-chain">A Completely Different Business Model and Chain</h1>
+																		<p>Online team design tools rely not only on the product itself but also on the product experience management during the design process.</p>
+																		<p>The latter is particularly important for the B-side as it is a crucial closed loop.</p>
+																		<h3 id="not-a-summary-of-summary">Not a Summary of Summary</h3>
+																		<p>The core of team design tools is oriented towards the design process and tries to solve it through real-time collaboration and online communication.</p>
+																		<p>To reiterate, the core is actually "team" and "design," and everything else is secondary. While team materials, members/permissions, and brand are important, they are just bonus points.</p>
+																		<p>As a B-side product, we can also solve problems after the design is completed. Although accumulation is not a good habit for most teams, if it can be well resolved, it can also be a good way to increase user stickiness.</p>
+																	</div>
+																</div>
+															</div>
+															<!-- /Modalbox Info End -->
+
+														</div>
+													</li>
+													<li>
+														<img class="popup_image" src="img/news/PriceTags.jpg" alt="" />
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>September 1, 2020</span>
+																</div>
+																<div class="title">
+																	<h3><a href="#">B2B online collaboration product pricing strategies and issues</a></h3>
+																</div>
+															</div>
+
+															<!-- Modalbox Info Start -->
+															<div class="news_hidden_details">
+																<div class="news_popup_informations">
+																	<div class="text">
+																		<a href="https://blog.xiaoyu.io/2020/09-01-B%E7%AB%AF%E5%8D%8F%E5%90%8C%E4%BA%A7%E5%93%81%E7%9A%84%E6%94%B6%E8%B4%B9%E7%AD%96%E7%95%A5/" target="_blank">Click to view the Original Post, in Chinese</a>
+																		<p>* Cover image sourced from <a href="https://dribbble.com/shots/21291172-The-Price-of-a-Limb" target="_blank">Dribbble</a></p>
+																		<br>
+																		<h3>Pricing strategies</h1>
+																		<p>Currently, online tools' pricing strategies are very similar: subscription-based, monthly or yearly.</p>
+																		<p>This logic is clear since servers and team maintenance require funding.</p>
+																		<p>The subscription-based model works well for consumer (C) products, but in the business-to-business (B2B) market, it presents some problems, especially when it comes to collaboration.</p>
+																		<h3>Advantages of online tools</h2>
+																		<p>The core of collaboration tools is to incorporate as many internal workflows and team members as possible. In my opinion, this is one of the evaluation standards for B2B tools, to judge and expand the product's boundaries.</p>
+																		<p>For example, student A needs to create a graphic.</p>
+																		<h3>Traditional workflow</h3>
+																		<p>The traditional workflow involves creating the graphic in Photoshop, exporting it, sending it to student B, and repeating this process several times.</p>
+																		<h3>Online workflow</h3>
+																		<p>In the new online collaboration process, student A creates the graphic on the collaboration tool and shares it with student B via a link or within the platform. Student B marks the changes or makes them directly, and they both adjust the graphic together.</p>
+																		<p>The entire process is completed within the tool, eliminating the need for exporting files, reviewing feedback, local version control, and aligning versions between both parties.</p>
+																		<p>This experience is much better than the traditional process, and the more processes and people the tool can include, the better the team's experience.</p>
+																		<h3>Real-world problems</h3>
+																		<p>For example, in the brief graphic design process mentioned earlier, two roles are involved: designer A and reviewer B.</p>
+																		<p>A needs to be involved in the entire design process, while B may only review the work after A completes it. A may have five days to participate, while B may only spend half a day reviewing it.</p>
+																		<p>From a time perspective, A's account is being fully utilized, while B's account is idle most of the time.</p>
+																		<p>Most platforms charge for accounts or seats, and teams have to pay for both accounts. In this case, the B account is relatively less cost-effective, and teams will struggle with whether to spend money on it, which contradicts the original intention of including as many people and processes as possible.</p>
+																		<p>For example, the staffing ratio for a basic product development team in a startup may be one designer, one product manager, two front-end developers, and two back-end developers. For design tools, at least three positions, including the designer, product manager, and front-end developer, should be included, but only one person, the designer, heavily uses it. Does the team need to purchase four seats for one person? Three-quarters of the accounts are idle most of the time.</p>
+																		<p>"It's impossible. Let's use Sketch or Photoshop instead."</p>
+																		<h3>Figma's pricing by role</h3>
+																		<p>Therefore, pricing different seats based on roles or functions is a good choice.</p>
+																		<p>Figma divides its users into two roles based on their ability to edit. Regular users are free, and editors are charged.</p>
+																		<p>This is a good strategy. Figma can include all members of the team in the platform as much as possible.</p>
+																		<p>Designers, product managers, front-end and back-end developers can all participate in Figma's platform and develop a habit of using it. As the team's daily work expands, the platform may also include the CEO, adjacent teams, and softwares (after all, viewing is free).</
+																		<h3>Plus: Handling other teams or softwares joining the business process</h3>
+																		<p>PS2: Figma's "product prototype tool" is based on its ability to attract many product managers to the platform.</p>
+																		<h3>Dynamic seats</h3>
+																		<p>In the past few days, I've started to review collaboration-related content and have repeatedly come across the term "serverless" while studying CRDT. By the way, AWS's lambda has been online for several years now.</p>
+																		<p>I realized that pricing based on demand and usage, like electricity and water bills, is a meaningful technology for tool products. If pricing could be based on a daily or hourly basis, even at a higher unit price, most teams could accept it as a temporary seat.</p>
+																		<p>The significance of dynamic seats in a product is not only to save costs for small and medium-sized teams but also to encourage as many people and processes as possible to move to the platform.</p>
+																		<p>The product form of dynamic seats can take many forms: unassigned seats, seats that open and close as needed, and seats that automatically charge based on usage, among others. We can discuss this further in the future.</p>
+																		<h2>Conclusion</h2>
+																		<ol>
+																		<li>The core of collaboration tools is to incorporate as many internal workflows and team members as possible.</li>
+																		<li>Pricing based on editing seats presents barriers for roles that require less editing.</li>
+																		<li>More flexible and dynamic pricing strategies are needed.</li>
+																		</ol>
+																		<p>In summary, B2B online collaboration products need to address the challenge of including as many people and processes as possible while providing a pricing model that is flexible, dynamic, and cost-effective for teams.</p>
+																	</div>
+																</div>
+															</div>
+															<!-- /Modalbox Info End -->
+
+														</div>
+													</li>
+													<li>
+														<img class="popup_image" src="img/news/Parking.png" alt="" />
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>May 28, 2018</span>
+																</div>
+																<div class="title">
+																	<h3><a href="#">Exploring the Challenges and Opportunities of Smart Parking Solutions (in 2018)
+																	</a></h3>
+																</div>
+															</div>
+
+															<!-- Modalbox Info Start -->
+															<div class="news_hidden_details">
+																<div class="news_popup_informations">
+																	<div class="text">
+																		<a href="https://blog.xiaoyu.io/2018/5-28-%E5%81%9C%E8%BD%A6/" target="_blank">Click to view the Original Post, in Chinese</a>
+																		<p>* Cover image sourced from <a href="https://dribbble.com/shots/20558250-Transportation-App-3D" target="_blank">Dribbble</a></p>
+																		<!-- directives:[] -->
+																		<h3 id="0-background">0. Background</h3>
+																		<p>Back in 2015, when mobile payments were just beginning to take off, Didi was gaining momentum, and Ofo and Mobike were booming. We believed that parking lots would be a segment for traffic entry and that there weren't many players in the industry, so we entered the market with a proletarian mentality to transform and upgrade the industry.</p>
+																		<p>The business itself was not difficult to understand. It relied on platforms to connect offline parking lots with online users. The first thing we needed to do was to solve the problem of connecting parking lots to the online world. This was done through license plate recognition using OCR, where license plates were used as user identifiers, and basic data such as parking orders were synchronized online.</p>
+																		<p>We built a parking platform to connect and communicate between parking lot operators and vehicle owners, and improved the parking experience through intelligent and informational parking equipment upgrades.</p>
+																		<p>The business model was also straightforward: empower parking lot operators in exchange for user traffic to drive subsequent operations. Typical applications included online searches for parking lots, payment of parking fees, monthly subscription users, and more.</p>
+																		<p>We tried many ways to accomplish this, mainly focusing on two aspects: social parking lots and government-owned on-street parking.</p>
+																		<p>First, let's talk about social parking lots, also known as enclosed parking lots or off-street parking lots.</p>
+																		<p>(An off-street parking lot is fenced and has a toll booth, usually operated by a real estate/property management company or a specialized parking management company; parking spaces on the street are considered on-street parking lots, and all property rights belong to the government.)</p>
+																		<h2 id="1-social-parking-lots-in-2016">1. Social Parking Lots in 2016</h2>
+																		<h3 id="11-parking-lot-needs">1.1 Parking Lot Needs</h3>
+																		<p>Owners: Money. Management team: Convenience. Attendants: Not too complicated.</p>
+																		<h4 id="111-can-we-meet-these-needs">1.1.1 Can We Meet These Needs?</h4>
+																		<p>Yes, but it's not very noticeable for owners.</p>
+																		<p>There are several reasons for this: 1. There are relatively few cases on the market, so people are reluctant to try new things; 2. Inertia, the management structure of parking lots is already relatively stable, and people don't want to fuss with it; 3. There will not be too much additional income in the short term.</p>
+																		<p>It's not just the owners who are reluctant to change; internal conflicts over profit sharing can also be a barrier.</p>
+																		<h4 id="112-our-empowerment">1.1.2 Our Empowerment</h4>
+																		<p>a. Online Management of Business Operations: It mainly includes three parts: parking lot operating status, vehicle management, and toll team management. After the transformation, every order can be viewed online, including entry and exit time, license plate, photos, etc. Fixed vehicles can be directly registered on the online platform, and toll team's charging records are fully transparent. This blocks two types of revenue loss: 1. Loss of fees caused by allowing vehicles to pass freely offline; 2. Parking fees embezzled by toll collectors (for well-managed parking lots, I estimate that this fee ratio is about 5%, but with a daily revenue of 10,000, it can actually increase revenue by 150,000 to 200,000 per year).</p>
+																		<p>b. Improved Entry and Exit Efficiency: License plate is equivalent to identity, no need to issue cards or manually record, eliminating additional interaction processes between car owners or toll collectors, improving entry and exit time, especially during peak periods. The exit time for general vehicles is about 22 seconds, and for temporary parking, it is about 16 seconds after installing the equipment, and for fixed vehicles or our users, it is about 3 seconds. This means that the peak value of one hour can be increased by at least 220 vehicles from 160. After the number of our users increases, the improvement will be more significant, and it can significantly reduce labor costs. (Actually, most of the time, it will not operate at full capacity, and the amount of money that can be saved is limited.)</p>
+																		<p>c. Ability to Make Online Payments: Actually, this should be summarized into the intelligence of the parking lot, but the reason for mentioning it separately is that online payment for parking has become part of the routine cashless travel. (There was not such a strong demand in 2015-2016.) When I was observing at a toll booth in Hohhot, I could see that almost 30% (4 days, 9 pm to midnight, 23 out of 78 users) of the users actively asked if they could pay with WeChat (not a single one asked about Alipay).</p>
+																		<p>d. Others: Including reducing the requirements for the quality of toll collectors, improving the image of the parking lot, etc.</p>
+																		<h3 id="12-users-in-the-social-parking-lot-scene">1.2 Users in the Social Parking Lot Scene</h3>
+																		<h4 id="121-core-user-needs">1.2.1 Core User Needs</h4>
+																		<p>No matter where, the core need is to find a parking space quickly.</p>
+																		<h4 id="122-can-we-meet-them">1.2.2 Can We Meet Them?</h4>
+																		<p>Frankly speaking, at the current stage, smart parking is not a revolutionary thing on the user side, because it can only provide an optimized parking experience, and does not solve the parking problem itself, and cannot guarantee that there will always be a parking space available for you. Or to imagine from a longer-term perspective, when you go to a restaurant, after getting off at the entrance of the restaurant, a self-driving private car still needs to drive a long way to the parking space we have arranged for it.</p>
+																		<p>The essence of the problem is that parking spaces are actually scarce resources. There are nearly 6 million cars in Beijing, but less than 2 million parking spaces, a ratio of only 0.3, and the normal ratio should be 1.2. Moreover, the tidal phenomenon in the inner ring and core commercial areas is obvious, and it takes a long time to find a parking space.</p>
+																		<p>Therefore, we cannot guarantee to solve this problem.</p>
+																		<h4 id="123-what-can-we-do-then">1.2.3 What Can We Do Then?</h4>
+																		<p>a. Tell users about the parking lot situation. Currently, how many parking spaces are available in the area/parking lot can be viewed, which plays a role in guiding or diverting; price-sensitive users can also filter parking lots.</p>
+																		<p>b. Optimized parking experience. Our users do not need to park or get a card when entering, and can directly deduct fees online when exiting.</p>
+																		<p>c. Customized operation services such as monthly parking.</p>
+																		<p>d. Value-added services related to cars, such as local car washing and maintenance services. (In essence, it improves the added value of parking spaces.)</p>
+																		<p>e. Other services related to cars.</p>
+																		<p>/* C, D, and E require deep cooperation with parking lots.</p>
+																		<h4 id="124-who-are-our-users">1.2.4 Who Are Our Users?</h4>
+																		<p>In theory, anyone who parks is our user. Because we are doing infrastructure.</p>
+																		<p>But the characteristics of core users are very clear, temporary users who park in the parking lot/area periodically.</p>
+																		<p>They are our seed users, and we can see them by guarding the parking lot.</p>
+																		<h4 id="125-how-can-we-quickly-acquire-users">1.2.5 How Can We Quickly Acquire Users?</h4>
+																		<p>The fastest way to acquire users in the early stage is locally at the parking lot, which will be discussed later.</p>
+																		<p>But if there is only offline promotion, it is a fantasy to get a large number of high-quality users. However, due to the small number of parking lots, it has not been possible to connect the dots to form a line, which has prevented online promotion, which is very regrettable.</p>
+																		<p>If there is an opportunity to do this, besides the coupons that have already been played out, I hope to have the opportunity to operate some events or value-added services with some parking spaces.</p>
+																		<p>Some interesting things that have been thought of include: 1. Membership level, special sound or effect on the display screen and voice when entering and exiting for different levels; 2. Help-seeking activities: get the right to use reserved parking spaces by asking friends to like and share; 3. Membership points, such as car washing, etc., also verifying the reliability of similar services inside the parking lot; 4. A mayor mechanism similar to Foursquare, with dedicated and eye-catching parking spaces…</p>
+																		<h3 id="14-problems-we-have-encountered">1.4 Problems We Have Encountered</h3>
+																		<h4 id="141-technology">1.4.1 Technology</h4>
+																		<p>Software platform problems can be solved anytime, but hardware problems are very troublesome.</p>
+																		<p>Especially the problem of recognition rate, license plate is the user's identity and the core connection between offline and online business.</p>
+																		<p>The earliest OCR used photo recognition, which triggered taking a photo with a magnetic coil and then recognizing the license plate number. It claimed to have a recognition rate of 98%, but actually, it was only about 92-94% due to the influence of the recognition environment. This means that nearly 50 orders out of 500 vehicles entering and exiting will be incorrect. This is unacceptable.</p>
+																		<p>In the mid-to-late 2016s, the supplier's technology was updated, and video image recognition was used, recognizing multiple frames of images at once and analyzing and comparing them, raising the rate to 98-99%, meaning that the number of wrong orders for 500 vehicles entering and exiting was reduced to about 10, and with manual intervention, it was basically acceptable.</p>
+																		<p>There are also problems with processing unlicensed vehicles or vehicles with obscured license plates, and the current technical architecture cannot handle them well, and can only be gradually optimized.</p>
+																		<h4 id="142-financial-problems">1.4.2 Financial Problems</h4>
+																		<p>First and foremost is the equipment, which is expensive.</p>
+																		<p>The cost of an entry and exit device with a moderate price is about 20,000 to 30,000, not including the cost of modifying the entry and exit. In 2015, most parking lots did not have the awareness to invest several thousand dollars in a system that "seems to have no use" for them. Therefore, giving them away in the early stage was a big problem for cash-strapped start-ups.</p>
+																		<h4 id="143-diverse-b-side-demands">1.4.3 Diverse B-side Demands</h4>
+																		<p>Construction and debugging of parking lots locally. Parking lots have too many demands, and there are more historical legacy problems. The Chinese people solve problems with a balance and harmony, but this kind of state of dancing on the edge of a knife cannot be solved by the manpower of a startup company. For example, in a parking lot, fees are charged on the left-hand side of the parking lot, while there is no charge for parking in front of a certain restaurant on the right-hand side. Or the billing rules within the parking lot are not in line with common sense. One unresolved demand will result in an immediate phone call.</p>
+																		<p>Some demands can be solved by software, but some demands can only be slowly dealt with by negotiating with the parking lot.</p>
+																		<h4 id="144-cold-start">1.4.4 Cold Start</h4>
+																		<p>This is a problem that all O2O projects will encounter. Unlike the recommendation system, the solution for this LBS-specific O2O project is very clear, taking parking lots means taking users. The reason is also clear, the parking lot itself is a place where demand occurs.</p>
+																		<p>The fastest way to acquire users in the early stage is locally at the parking lot, and in general, a parking lot with 500 parking spaces can bring less than one hundred active users in the first month.</p>
+																		<h2 id="2-competitors">2. Competitors</h2>
+																		<p>As mentioned earlier, we cannot solve the problem of quickly obtaining parking lots, and most competitors cannot either. In 2016-2017, a large number of new companies emerged in the parking industry, but only a few survived.</p>
+																		<p>There are mainly two types of competitors:</p>
+																		<ol>
+																		<li>Property/real estate companies with their own parking lots, who are not worried about having no business;</li>
+																		<li>Companies that produce their own hardware and solutions, who can still do well by selling their solutions even without operating a platform.</li>
+																		</ol>
+																		<p>For us, the second type of competitor is both an enemy and a friend, while the first type is a direct competitor.</p>
+																		<p>My brief analysis of the first type in 2016 was:</p>
+																		<ul>
+																		<li>Their advantages: parking lot resources, which can be deeply exploited for customized parking services. They do not have to worry about their own parking lots and can prioritize the user side.</li>
+																		<li>Their disadvantages: the pace of their technical team may be slow, and other companies may have grievances and not cooperate with them on parking lots.</li>
+																		<li>Our opportunities: use the advantages of technology and team efficiency to obtain other parking lot resources, and strive to attract as many users as possible;</li>
+																		<li>Threats to us: After the competitor's product takes shape, they may use C-end users to "force" other parking lots to cooperate with them.</li>
+																		</ul>
+																		<p>The results were actually a bit bleak, and the problem was on our side, so we won't discuss it further.</p>
+																		<h2 id="3-government-run-roadside-parking-lots">3. Government-run Roadside Parking Lots</h2>
+																		<p>All roadside parking lots are owned by the government. Therefore, when it comes to roadside parking lots, it is different from negotiating with social parking lots. We just need to negotiate with the government.</p>
+																		<p>There are several advantages to negotiating with the government for roadside parking lots:</p>
+																		<ol>
+																		<li>They cover a wide range and there are parking spaces throughout the city.</li>
+																		</ol>
+																		<p>We'll add more next time.</p></div>
+																</div>
+															</div>
+															<!-- /Modalbox Info End -->
+
+														</div>
+													</li>
+													
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /NEWS -->
+
+
+
+					<!-- CONTACT -->
+					<!-- <div class="yu_section" id="contact">
+						<div class="yu_contact">
+							<div class="tm_content">
+								<div class="wrapper">
+									<div class="left">
+										<div class="yu_title">
+											<span>- Let's Connect</span>
+											<h3>Get in touch</h3>
+										</div>
+										<div class="text">
+											<p>Feel free to send me a message about anything that you want to run past me.</p>
+										</div>
+										<div class="info">
+											<ul>
+												<li>
+													<a href="tel:+61413310596">04 1331 0596</a>
+												</li>
+												<li>
+													<a href="mailto:shawonline@gmail.com">shawonline@gmail.com</a>
+												</li>
+												<li>
+													<a class="href_location" href="#contact">Acton, Canberra</a>
+												</li>
+												<li>
+													<a href="https://www.linkedin.com/in/yushaw/" target="_blank">Linkedin</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="right">
+										<div class="fields">
+							<div class="contact-info-card">
+								<h3 style="margin-bottom: 20px;">Get In Touch</h3>
+								<div class="contact-methods">
+									<div class="contact-item">
+										<span class="icon">📧</span>
+										<a href="mailto:shawonline@gmail.com">shawonline@gmail.com</a>
+									</div>
+									<div class="contact-item">
+										<span class="icon">💼</span>
+										<a href="https://www.linkedin.com/in/yushaw/" target="_blank">LinkedIn Profile</a>
+									</div>
+									<div class="contact-item">
+										<span class="icon">📄</span>
+										<a href="file/YuXiao_ProductManager.pdf" target="_blank">Download Resume</a>
+									</div>
+								</div>
+								<style>
+									.contact-info-card {
+										background: #f8f9fa;
+										padding: 40px;
+										border-radius: 10px;
+										text-align: center;
+									}
+									.contact-methods {
+										display: flex;
+										flex-direction: column;
+										gap: 20px;
+										margin-top: 30px;
+									}
+									.contact-item {
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										gap: 15px;
+										font-size: 18px;
+									}
+									.contact-item .icon {
+										font-size: 24px;
+									}
+									.contact-item a {
+										color: #007bff;
+										text-decoration: none;
+										transition: color 0.3s;
+									}
+									.contact-item a:hover {
+										color: #0056b3;
+										text-decoration: underline;
+									}
+								</style>
+							</div>
+								</div>
+								<div class="wrapper">
+									
+									<div class="left">
+										<div class="download-link">
+											<p>
+												👨‍💻<a href="file/YuXiao_ProductManager.pdf" target="_blank">Download my Resume</a>
+											</p>
+											<p>
+												<span class="text">by Mid 2023</span>
+											</p>
+										</div>
+										<br>
+										<div>
+											<p>Or add me on 🔗<a href="https://www.linkedin.com/in/yushaw/" target="_blank">Linkedin</a></p>
+										</div>
+									</div>
+									<div class="right">
+										<a href="file/YuXiao_ProductManager.pdf" target="_blank"><img class="cv-mockup" src="img/cv/CV_Mockup.jpg" alt=""></a>
+									</div>
+								</div>	
+
+							</div>
+						</div>
+					</div>
+					<!-- /Resume -->
+				</div>
+			</div>
+			<!-- /MAINPART -->
+			
+		</div>
+		
+		<!-- CURSOR -->
+		<div class="mouse-cursor cursor-outer"></div>
+		<div class="mouse-cursor cursor-inner"></div>
+		<!-- /CURSOR -->
+		
+	</div>
+	<!-- / WRAPPER ALL -->
+	
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
+<script src="js/plugins.js"></script>
+<script src="js/init.js"></script>
+<!-- /SCRIPTS -->
+
+</body>
+</html>

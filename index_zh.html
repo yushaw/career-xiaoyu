@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// 检查LocalStorage
+		let savedLang = localStorage.getItem('userLang');
+		
+		if(savedLang) {
+		redirectToPage(savedLang);
+		} else {
+		const userLang = navigator.language || navigator.userLanguage;
+		if(userLang.includes('zh')) {
+			redirectToPage('zh');
+		} else {
+			redirectToPage('en');
+		}
+		}
+
+		// 手动切换并保存设置
+		window.switchToEnglish = function() {
+		localStorage.setItem('userLang', 'en');
+		redirectToPage('en');
+		}
+
+		window.switchToChinese = function() {
+		localStorage.setItem('userLang', 'zh');
+		redirectToPage('zh');
+		}
+
+		// 重定向到相应页面
+		function redirectToPage(lang) {
+			const currentPath = window.location.pathname;
+			const hash = window.location.hash; // 获取锚点
+
+			let newPath;
+			if(lang === 'zh') {
+				newPath = '/index_zh.html';
+			} else {
+				newPath = '/index.html';
+			}
+
+			if(currentPath !== newPath) {
+				window.location.href = newPath + hash; // 附加锚点
+			}
+		}
+	});
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WGXZ0EY98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5WGXZ0EY98');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="hi I'm Yu Xiao">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>肖宇的作品集</title>
+
+<!-- FAVICON -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- STYLES -->
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/plugins.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
+<!-- /STYLES -->
+
+</head>
+
+<body> 
+	
+	<!-- PRELOADER -->
+	<div id="preloader">
+		<div class="loader_line"></div>
+	</div>
+	<!-- /PRELOADER -->
+	
+	<!-- WRAPPER ALL -->
+	<div class="yu_all_wrap" data-magic-cursor="hide"> 
+			
+		<div class="dodo_tm_one_page_wrapper">
+		
+			<!-- MOBILE MENU -->
+			<div class="yu_topbar">
+				<div class="topbar_inner">
+					<div class="logo" data-type="image"> <!-- You can use text or image as logo. data-type values are: "image" and "text"  -->
+						<a class="image" href="#"><img src="img/logo/logo.png" alt="" /></a>
+						<a class="text" href="#"><span>X.Yu</span></a>
+					</div>
+					<div class="i18n">
+						<p><a href="javascript:switchToEnglish();"><span class="i18nCN">English</span></a></p>
+					</div>
+					<div class="trigger">
+						<div class="hamburger hamburger--slider">
+							<div class="hamburger-box">
+								<div class="hamburger-inner"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="yu_mobile_menu">
+				<div class="inner">
+					<div class="wrapper">
+						<div class="avatar">
+							<div class="image" data-img-url="img/about/1.jpg"></div>
+						</div>
+						<div class="menu_list">
+							<ul class="anchor_nav">
+								<li class="current"><a href="#home">首页</a></li>
+								<li><a href="#experience">经历</a></li>
+								<li><a href="#skills">技能</a></li>
+								<li><a href="#portfolio">作品集</a></li>
+								<li><a href="#resume">简历</a></li>
+							</ul>
+						</div>
+						<div class="i18n">
+							<p><span class="i18nCN">中文</span> | <a  href="javascript:switchToEnglish();">Eng</a></p>
+						</div>
+						<div class="social">
+							<ul>
+								<li><a href="https://www.linkedin.com/in/yushaw" target="_blank" title="Linkedin"><img class="svg" src="img/svg/social/linkedin.svg" alt="" /></a></li>
+								<li><a href="https://github.com/yushaw" target="_blank" title="Github"><img class="svg" src="img/svg/social/github.svg" alt="" /></a></li>
+								<li><a href="https://twitter.com/yushaw" target="_blank" title="Twitter"><img class="svg" src="img/svg/social/twitter.svg" alt="" /></a></li>
+							</ul>
+						</div>
+						<div class="copyright">
+							<p>Crafted with ❤</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /MOBILE MENU -->
+
+			<!-- SIDEBAR -->
+			<div class="yu_sidebar">
+				<div class="sidebar_inner">
+					<div class="author">
+						<div class="image">
+							<img src="img/thumbs/1-1.jpg" alt="" />
+							<div class="main" data-img-url="img/about/1.jpg"></div>
+						</div>
+						<div class="name">
+							<h3><span>Yu Xiao<span class="back">肖宇</span></span></h3>
+						</div>
+					</div>
+					<div class="menu scrollable">
+						<ul class="anchor_nav">
+							<li class="current"><a href="#home">首页</a></li>
+								<li><a href="#experience">经历</a></li>
+								<li><a href="#skills">技能</a></li>
+								<li><a href="#portfolio">作品集</a></li>
+								<li><a href="#resume">简历</a></li>
+						</ul>
+					</div>
+					<div class="i18n">
+						<p><span class="i18nCN">中文</span> | <a id="eng" href="javascript:switchToEnglish();">Eng</a></p>
+					</div>
+					<div class="copyright">
+						<div class="social">
+							<ul>
+								<li><a href="https://www.linkedin.com/in/yushaw/" target="_blank" title="Linkedin"><i class="icon-linkedin-1"></i></a></li>
+								<li><a href="https://github.com/yushaw" target="_blank" title="Github"><i class="icon-github-circled-alt2"></i></a></li>
+								<li><a href="https://twitter.com/yushaw" target="_blank" title="Twitter"><i class="icon-twitter-3"></i></a></li>
+							</ul>
+						</div>
+						<div class="text">
+							<p>Crafted by Yu with ❤</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /SIDEBAR -->
+
+			<!-- MAINPART -->
+			<div class="yu_mainpart">
+				<div class="mainpart_inner">
+
+					<!-- HOME -->
+					<div class="yu_section animated" id="home">
+						<div class="yu_home">
+							<div class="tm_content">
+								<div class="details">
+									<div class="left">
+										<div class="title">
+											<h3>你好, 我是 <span class="blueColor">肖宇！</span></h3>
+											<h3>
+												<span class="cd-headline rotate-1"> <!-- 动态文本值: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+													<span class="cd-words-wrapper">
+													  <b class="is-visible">产品经理</b>
+													  <b>Scrum Master</b>
+													  <b>Product Owner</b>
+													  <b>设计师</b>
+													  <b>程序员</b>
+													  <b>极客</b>
+													  <b>持续学习者</b>
+													</span>
+												</span>
+											</h3>										
+										</div>
+										<div class="subtitle">
+											<p>我是一位充满激情且好奇心强烈的产品经理，有多年<span class="blueColor"></span>产品经验；对工具和 AI 辅助的流程自动化有浓厚兴趣。</p>
+										</div>
+										<div class="buttons">
+											<div class="yu_button">
+												<a class="anchor" href="#about">了解更多？</a>
+											</div>
+										</div>
+										<div class="info">
+											<ul>
+												<li><a href="tel:+8613581636006">13581636006</a></li>
+												<li><a href="mailto:shawonline@gmail.com">shawonline@gmail.com</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="right">
+										<img class="career-photo" src="img/about/2.jpg" alt="" />
+									</div>
+								</div>
+								<div class="scrolldown">
+									<div class="chevron"></div>
+									<div class="chevron"></div>
+									<div class="chevron"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /HOME -->
+
+					<!-- ABOUT -->
+					<div class="yu_section" id="about">
+						<div class="yu_about">
+							<div class="tm_content">
+								<div class="yu_biography">
+									<div class="left">
+										<div class="title">
+											<span class="mini">- 很高兴见到你！</span>
+											<h3 class="name">肖宇</h3>
+											<span class="job">
+												<span class="cd-headline rotate-1"> <!-- 动态文本值: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+													<span class="blc">产品经理 -</span>
+													<span class="cd-words-wrapper">
+													<b class="is-visible">注重细节</b>
+													<b>数据驱动</b>
+													<b>追求完美</b>
+													</span>
+												</span>
+											</span>
+										</div>
+										<div class="yu_button">
+											<a class="anchor" href="#portfolio">我的过往作品集</a>
+										</div>
+									</div>
+									<div class="right">
+										<div class="text">
+											<p>你好！我是 <span class="yellowColor">肖宇</span>，一位拥有 8 年工作经验并有计算机科学背景的资深产品经理，刚在澳大利亚国立大学完成机器学习的硕士学位。我在 2C、2B、SaaS 以及硬件等多个领域锻炼了自己的技能，展示了我在以客户为中心的产品开发和数据驱动策略方面的熟练程度。</p>
+											<p>我的实战经验包括了互联网产品开发的全周期，从构思到迭代优化。我领导过各种类型的产品，特别是在线设计编辑器和智能停车系统，显示出我对工具类产品的兴趣和专长。</p>
+											<p>作为一位严谨的逻辑思考者，我成功地领导了一个由 15 名成员组成的产研团队，显著提高了用户参与度和留存率。我也是一位拥有 Scurm 的 <a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank">Product Owner 认证</a>的专业人士，擅长领导从概念到现实的敏捷项目。</p>
+											<p>我对于将人工智能融入工具产品充满热情，渴望利用我的技能在一个快节奏的科技公司中和产品共同成长以及提高客户满意度。</p>
+										</div>
+									</div>
+								</div>
+								<div class="yu_counter">
+									<ul>
+										<li>
+											<div class="list_inner">
+												<h3>8</h3>
+												<span>年经验</span>
+											</div>
+										</li>
+										<li>
+											<div class="list_inner">
+												<p class="Quadrupled">四倍</p>
+												<span>活跃用户数量</span>
+											</div>
+										</li>
+										<li>
+											<div class="list_inner">
+												<h3>25%</h3>
+												<span>收入增长</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="yu_experience" id="experience">
+								<div class="tm_content">
+									<div class="yu_title">
+										<h3>经历</h3>
+										<span>- 教育经历</span>
+									</div>
+									<div class="list">
+										<ul>
+											<li>
+												<div class="list_inner anu" id="anu">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2021.02 - 2023.07</span>
+															<h3><a href="https://www.anu.edu.au/" target="_blank">澳大利亚国立大学</a></h3>
+														</div>
+														<div class="place">
+															<h6>硕士</h6>
+															<span>机器学习</span>
+														</div>
+													</div>
+													<div class="text">
+														<p>• GPA: 优秀 (6/7)</p>
+														<p>• QS 排名: <a href="https://www.topuniversities.com/universities/australian-national-university-anu#p2-rankings" target="_blank">34</a></p>
+													</div>
+												</div>
+											</li>
+											<li>
+												
+												<div class="list_inner hust">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2007.09 - 2011.06</span>
+															<h3><a href="http://english.hust.edu.cn/" target="_blank">华中科技大学</a></h3>
+														</div>
+														<div class="place">
+															<h6>本科</h6>
+															<span>光电信息工程</span>
+														</div>
+													</div>
+													<div class="text">
+														<p>• GPA: 78.78/100</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_experience work">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- 工作经历</span>
+									</div>
+									<div class="list">
+										<ul>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2022.11 - 2023.02</span>
+															<h3>产品经理（实习）</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.mochilabs.com.au/" target="_blank">Mochi Labs</a></span>
+															<p>堪培拉</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 设计<a href="https://inks.ai/" target="_blank">在线文档编辑器</a>功能，包括数据文档基础模块、数据可视化流程和视频笔记等功能；</p>
+														<p>• 参与创建 BP、产品愿景、路线图、用户故事、用户画像等：参与制定产品的商业计划书（BP），明确产品愿景和发展方向；协助规划产品的发展路线图，并撰写用户故事和用户画像，以确保产品能够满足用户需求。</p>
+													</div>
+												</div> 
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2020.07 - 2022.07</span>
+															<h3>产品经理</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.isheji.com/" target="_blank">爱设计</a></span>
+															<p>北京</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 解决在线图片编辑器的可用性问题，优化使用体验：通过用户研究和反馈收集，分析用户行为和需求，找出现有编辑器中的问题，并提出改进措施以提高产品的可用性和用户体验；</p>
+														<p>• 图片编辑器产品架构重构和 UX 优化：领导团队进行在线图片编辑器产品架构的重构，优化用户界面和用户体验，确保产品功能完整且易于操作。重构后，编辑器的用户留存率提升了25%，用户平均使用时间增加了40%；</p>
+														<p>• 面向大客户提供定制的编辑器 SDK 接入能力：与技术和销售团队合作，为大客户提供定制化的编辑器 SDK 接入解决方案，以满足其特定需求，确保顺利的产品整合和部署；</p>
+														<p>• 整理需求，搭建通用的 SDK 平台：在项目过程中，收集和整理来自不同客户的需求，基于这些需求搭建通用的 SDK 平台，以提高产品的复用性和扩展性；</p>
+														<p>• 素材管理后台：与运营和内容部门协调，确认图片管理流程，规划并从零开始搭建内容管理系统（CMS），确保运营同学高效率的对图片素材进行导入和分发管理。</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2018.06 - 2019.09</span>
+															<h3>产品经理 - 网页端负责人</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.chuangkit.com/" target="_blank">创客贴</a></span>
+															<p>北京</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 协调整个 Web 侧产品架构，主要负责图片编辑器的功能规划和实现。在任期内活跃用户数量增加了四倍；</p>
+														<p>• 主导完成商业模式从单一订阅制到“订阅+内容消费”的调整过渡以及 Web 端整体的 UI/交互更新优化；</p>
+														<p>• 推动以用户为中心的设计，优化更新现有的编辑器的核心工具体验，如画布中的元素操作交互优化、文字/素材的展示分发等。针对新媒体用户群，推出提高留存的功能，如文字样式、Gif  图片生成等；最终 NPS  达到 78 分；</p>
+														<p>• 推出了艺术文字效果，首周点击量 150k，而且使用艺术字的模板的点击量整体高出 20-30%；</p>
+														<p>• 运营协助和用户增长：设计优化 SaaS  工具中素材、模板的内容分发模块；协助产品运营工作，如获取用户画像、优惠券需求以及基础数据需求；完善用户反馈和数据渠道，监控关键性能点的变化状况。</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2015.08 - 2018.04</span>
+															<h3>产品负责人</h3>
+														</div>
+														<div class="place">
+															<span>中钢城发科技有限公司</span>
+															<p>北京</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 在 0-1阶段，深入了解路外/路内车场的运营工作，找出了线下运营流程，并为平台提出了针对性的线上解决方案和流程。完成了首期平台的调研和测试，确保系统的稳定性和功能可用性，并成功推动平台上线；</p>
+														<p>• 在迭代阶段，与运营、商务和项目等部门进行有效沟通，确定新的需求，并成功推动需求的快速落地。例如，制定并完成了第一版手持 PDA 上的收费 App 及配套的收费流程，优化了施工流程，降低了施工人员的要求和出错成本；</p>
+														<p>• 参与制定并实施了车场运营数据模块，该模块参考行业报告及相关学术论文，总结出停车运营的关键评估数据，并以此为基础，完成了车场总览首页和数据分析模块的设计和实施；</p>
+														<p>• 参与设计并实施了车场线上管理系统，将费率设置、收费员管理等功能从线下车场移到云端，方便运营人员远程对车场进行管理；</p>
+														<p>• 线下参与北京、呼和浩特、六盘水等 20 多个智能车场与平台相关项目的招投标及实施，和利益相关方沟通和谈判确保项目成功执行。每天生成10,000张停车单。</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<span class="yellowColor">2013.06 - 2015.07</span>
+															<h3>产品助理 -> 产品经理</h3>
+														</div>
+														<div class="place">
+															<span><a href="https://www.drpeng.com.cn/" target="_blank">鹏博士集团</a></span>
+															<p>北京</p>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 负责商业 Wi-Fi 的云端平台功能设计与优化，编写产品需求文档（PRD），协调资源推进项目；</p>
+														<p>• 参与智能路由器相关的智能家居业务，以智能路由为支点，研究智能家居常见技术和协议，着重研究了802.15.4相关协议，如 Zigbee和 Thread；</p>
+														<p>• 基于研究结果，参与提出智能路由的感知网络初版需求，目的是优化设备接入流程，服务于集团旗下长城宽带的业务。</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /ABOUT -->
+
+						<!-- Skills -->
+						<div class="yu_section" id="skills">
+			
+							<div class="yu_services">
+								<div class="tm_content">
+									<div class="yu_service_title">
+										<div class="yu_title">
+											<span>- 技能</span>
+											<h3>我的技能</h3>
+										</div>
+									</div>
+									<div class="service_list">
+										<ul>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>01</span>
+															<h3><a class="anchor" href="#ProductArchitecture">产品管理</a></h3>
+														</div>
+														<div class="text">
+															<p>在开发产品路线图、管理跨功能团队和确保项目按时完成方面有显著成功；</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#ProductArchitecture"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>	
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>02</span>
+															<h3><a class="anchor" href="#UsabilityTesting">需求收集和用户研究</a></h3>
+														</div>
+														<div class="text">
+															<p>擅长挖掘需求场景，进行用户研究，并制作全面的需求文档；</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#UsabilityTesting"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>03</span>
+															<h3><a class="anchor" href="#DataAnalysis">数据分析和可视化</a></h3>
+														</div>
+														<div class="text">
+															<p>擅长使用 Tableau、Excel 和 Google Analytics 等数据分析工具驱动产品改进和决策；</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#DataAnalysis"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>04</span>
+															<h3><a class="anchor" href="#Prototyping">原型制作和用户体验设计</a></h3>
+														</div>
+														<div class="text">
+															<p>在创建高低保真原型、迭代设计和优化用户体验方面有丰富的经验；</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#Prototyping"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>	
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>05</span>
+															<h3><a class="anchor" href="#pspo">敏捷项目管理</a></h3>
+														</div>
+														<div class="text">
+															<p>擅长推动敏捷和 Scrum 方法论，推动跨功能协作，促进持续改进，并确保及时交付高质量、价值驱动的产品。（具有 PSM 和 PSPO 认证）</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#pspo"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<img class="popup_image" src="img/service/7.jpg" alt="" />
+												<div class="list_inner">
+													<div class="details">
+														<div class="title">
+															<span>06</span>
+															<h3><a class="anchor" href="#ArtificialIntelligence">技术专长</a></h3>
+														</div>
+														<div class="text">
+															<p>在计算机科学和机器学习方面有扎实的背景，熟悉 Python、SQL 和 Java。熟悉 OpenAI api，Langchain, Stable Diffusion 和相关的应用。</p>
+														</div>
+														<div class="yu_read_more">
+															<a class="anchor" href="#ArtificialIntelligence"><img class="svg" src="img/svg/rightArrow.svg" alt="" /></a>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_experience">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- 认证和语言</span>
+									</div>
+									<div class="list">
+										<ul>
+											
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<h3>中文/普通话</h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 母语</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner">
+													<div class="short">
+														<div class="job">
+															<h3>英语</h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• IELTS：7 （2020年）</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner pspo" id="pspo">
+													<div class="short">
+														<div class="job">
+															<h3><a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank">Scrum Product Owner™ II 认证</a></h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 获得日期：2023年6月19日</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="list_inner psm" id="psm">
+													<div class="short">
+														<div class="job">
+															<h3><a href="https://www.credly.com/badges/f4270709-fd2b-4214-99a3-7bca29ce9be3/" target="_blank">Scrum Master™ II 认证</a></h3>
+														</div>
+													</div>
+													<div class="text">
+														<p>• 获得日期：2023年6月14日</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="yu_softwares" id="softwares">
+								<div class="tm_content">
+									<div class="yu_title">
+										<span>- 软件与工具</span>
+										<h5>熟练掌握:</h5>
+									</div>
+									<div class="softwares_inner">
+								<ul>
+									<li>
+										<div class="list_inner">
+											<a href="https://www.credly.com/badges/a8ecda2f-0692-4422-b3f1-852012aceb83" target="_blank" title="Scrum Product Owner"><img src="img/softwares/-1.png" alt="" /></a>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/0.2.png" alt="SQL" title="SQL"/>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/0.3.png" alt="" title="Python"/>
+										</div>
+									</li>
+									<li> 
+										<div class="list_inner">
+											<img src="img/softwares/1.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/2.png" alt="" title="Figma" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/3.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/3.5.png" alt="" title="Visio"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/4.png" alt="" title="OmniGraffle"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/4.8.png" alt="" title="Project"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.png" alt="" title="OmniPlan"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.5.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/5.8.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/6.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/7.png" alt="" title="Photoshop"/>
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/7.5.png" alt="" />
+										</div>
+									</li>
+									<li>
+										<div class="list_inner">
+											<img src="img/softwares/8.png" alt="" />
+										</div>
+									</li>
+								</ul>
+							</div>
+								</div>
+							</div>
+					</div>
+					<!-- /Skills -->
+				
+
+					<!-- PORTFOLIO -->
+					<div class="yu_section" id="portfolio">
+						<div class="yu_portfolio">
+							<div class="tm_content">
+								<div class="yu_portfolio_title">
+									<div class="yu_title">
+										<span>- 过往作品集</span>
+										<h3>产品相关工作内容</h3>
+										<p>点击查看更多详细内容。</p>
+										<p>更新中...</p>
+									</div>
+								</div>
+								<div class="portfolio_list_flex">
+									<ul>
+										<li>
+											<div class="list_inner" id="ProductArchitecture">
+												<div class="image-wrapper">
+													<img src="img/portfolio/ProductArchitecture.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">产品架构</span>
+													<h3 class="title"><a class="line_effect" href="https://www.figma.com/file/JhzxAYMuDIHvPJVW5APo7w/Online-Design-Editor-Overall-Product-Structure?node-id=0%3A1&t=UMRnEmE8faWzRspS-1" target="_blank">产品架构案例：在线设计编辑器 (2019)</a></h3>
+													<span class="tools">工具：Figma</span>
+													<p>*注意：这是一个链接，点击后将会在新窗口打开一个<a href="https://www.figma.com/file/JhzxAYMuDIHvPJVW5APo7w/Online-Design-Editor-Overall-Product-Structure?node-id=0%3A1&t=UMRnEmE8faWzRspS-1" target="_blank"> Figma 文件</a>。</p>
+													<P>• 该文档从最基础的元素开始解在线编辑器的整体产品架构和方向。目的在于统一各部门和角色的产品理念和方向，减少因产品或技术理解误区产生的合作问题。同时帮助技术同事把握关键功能，以便更好的进行技术准备和内容组织。</P>
+												</div>     
+											</div> 
+										</li>
+
+										<li>
+											<div class=" list_inner" id="ArtificialIntelligence"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/ArtificialIntelligence.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">人工智能</span>
+													<h3 class="title "><a class="line_effect portfolio_popup" target="_blank">个人 AI 项目：大语言模型驱动的虚拟世界和虚拟角色 (2023-现在)</a></h3>
+													<span class="tools">工具：PyCharm, Git, Python, ChatGPT, 向量数据库</span>
+													<p>项目地址：<a href="https://github.com/yuhua6379/CyberNexus" target="_blank">Github 项目</a>。</p>
+													<p>• CyberNexus 是一个虚拟世界项目，通过大语言模型的自然语言处理和推理能力来驱动角色行为和交互；</p>
+													<p>• 此项目借助 ChatGPT API、prompt 工程和 embedding 数据库来赋予角色思考和记忆能力；</p>
+													<p>• 用户或者游戏中的角色可以和世界中的其他角色进行交流，你可以在 <a href="https://github.com/yuhua6379/CyberNexus/blob/main/showcase/sample_conversation.md" target="_blank">这个聊天记录示例</a> 中看到基础的角色之间是如何思考以及为了实现目标而交流的。</p>
+												</div>
+											</div>
+										
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：PyCharm, Git, Python, ChatGPT, 向量数据库</p>
+														</div>
+													</div>
+													<div>
+														<h3>项目背景</h3>
+														<p>CyberNexus 是一个虚拟世界项目，旨在通过大语言模型的自然语言处理和有限推理能力驱动世界中的角色。借助 OpenAI 的 ChatGPT API、prompt 工程设计和 embedding 数据库，赋予角色思考和记忆能力。</p>
+														<h3>项目地址</h3>
+														<p>地址为：<a href="https://github.com/yuhua6379/CyberNexus" target="_blank">CyberNexus</a>.</p>
+														<p>你可以尝试自己安装运行，或者如果你只是想看看效果，也可以在 <a href="https://github.com/yuhua6379/CyberNexus/blob/main/showcase/sample_conversation.md" target="_blank">这个聊天记录示例</a> 找到我们调试出来的一些记录。</p>
+														<h3>目标与目的</h3>
+														<p>构建自驱动的机器人，使角色之间能实时互动，实现虚拟社区构建，提高交互的真实感。</p>
+														<h3>产品功能</h3>
+														<p>・角色规划、交互、记忆和反思的能力；</p>
+														<p>・创建角色，以及对应的 bot；</p>
+														<p>・角色的记忆和反省能力；</p>
+														<p>・两个/多个角色之间的互动聊天等。</p>
+														<h3>产品整体逻辑</h3>
+														<p>如果图片太小可以点击图片，在新窗口中查看。</p>
+														<a href="img/portfolio/howitworks.png" target="_blank"><img style="max-width: 700px;" src="img/portfolio/howitworks.png" alt="" /></a>
+														<h3>下一步计划</h3>
+														<p>CyberNexus 项目通过大语言模型构建了一个充满活力的虚拟世界，下一步将进一步增强角色的能力，构建虚拟社区，实现更丰富的功能。</p>
+													</div>
+										
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="Prototyping">
+												<div class="image-wrapper">
+													<img src="img/portfolio/Prototyping.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">原型设计</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">多平台的原型设计案例 (2014-2021)</a></h3>
+													<span class="tools">工具：Axure, Figma, Sketch</span>
+													<p>• 此处包括了针对不同平台的多个原型设计案例，涵盖了桌面应用，SaaS，移动应用，Web 等。</p>
+													<p>• 根据产品当前所处的阶段和用户的分组画像，以及原型面向的对象或可能的使用方式，来决定使用高保真或者低保真原型。</p>												
+												</div>     
+											</div> 
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：Axure, Figma, Sketch</p>
+														</div>
+													</div>
+													<div>
+														<h3>案例1：内容管理系统设计 (2021)</h3>
+														<div class="textbox">
+															<p>产品类型：管理面板</p>
+															<p>平台：桌面</p>
+														</div>
+														<h4>整体结构和主要流程</h4>
+														<img style="max-width: 600px;" src="img/portfolio/cms_structure.png" alt="" />
+														<p>从零开始设计图片管理的 CMS，这是一个跨部门的平台，涉及到上传和传递图片的不同流程。</p>
+														<h4>工作流程</h4>
+														<img style="max-width: 400px;" src="img/portfolio/cms_workflow1.png" alt="" />
+														<img style="max-width: 400px;" src="img/portfolio/cms_workflow2.png" alt="" />
+														<p>与多部门的同事一起组织完整且详细的工作流程。</p>
+														<h4>原型</h4>
+														<p>使用 Axure 设计和实现平台的原型，包括多个模块和页面。</p>
+														<img style="max-width: 600px;" src="img/portfolio/cms_prototype.png" alt="" />
+														
+														<h3>案例2：文件管理 (2018)</h3>
+														<div class="textbox">
+															<p>产品类型：SaaS</p>
+															<p>平台：桌面</p>
+														</div>
+														<p>简单演示SaaS的文件管理功能，由 Figma 完成。</p>
+														<img style="max-width: 600px;" src="img/portfolio/SaaS.png" alt="" />
+
+														<h3>案例3：移动图片编辑器 - 微信小程序 (2018)</h3>
+														<div class="textbox">
+															<p>产品类型：微信小程序</p>
+															<p>平台：移动</p>
+														</div>
+														<p>微信平台的在线图片编辑器原型，包括剪裁、调整大小、文字、绘图工具等功能。</p>
+														<img style="max-width: 600px;" src="img/portfolio/WeChat_Mini.png" alt="" />
+
+														<h3>案例4：设计分享 (2020)</h3>
+														<div class="textbox">
+															<p>产品类型：跨平台功能</p>
+															<p>平台：桌面 & App & 微信小程序</p>
+														</div>
+														<p>这是一个相对简单但复杂的功能，它是跨平台的，涉及到复杂的权限检查。</p>
+														<img style="max-width: 600px;" src="img/portfolio/Design_Sharing.png" alt="" />
+													</div>
+	
+											</div>
+										</li>
+										
+										<li>
+											<div class="list_inner" id="DataAnalysis">
+												<div class="image-wrapper">
+													<img src="img/portfolio/DataAnalysis.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">数据分析</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">数据分析案例：应对季节性用户参与度下降（2018）</a></h3>
+													<span class="tools">工具：Tableau，MySQL，Google Analytics</span>
+													<p>• 此案例研究探讨了夏季用户参与度的显著下降，揭示了二线城市和教育用户的明显下滑的分析流程。</p>
+													<p>• 通过数据分析和用户访谈，我们确定了暑假是关键因素。我们制定了响应策略，例如季节性内容，用户保留程序和反馈机制。</p>
+												</div>     
+											</div> 
+
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：Tableau，MySQL，Google Analytics</p>
+														</div>
+													</div>
+													<div>
+														<h3>背景</h3>
+														<p>在7月和8月，我们观察到活跃用户群体出现了意外的大幅下降（超过10%）。我被任务要求理解这种下降背后的原因，并制定响应策略。</p>
+														<h3>问题识别</h3>
+														<p>我最初尝试通过直接与一组常规用户进行沟通来识别潜在问题。然而，与十几位用户的讨论并没有明确指出任何确定性的问题，这促使我们进行更深入的数据驱动分析。</p>
+														<h3>数据分析及发现</h3>
+														<p>我利用 Google Analytics 和我们的后端数据，进行了全面的用户画像分析。</p>
+														<img src="img/portfolio/DataAnalysis&Visualization.png" alt="" />
+														<p>分析揭示了两个关键的观察结果：</p>
+														<ul>
+															<li>1. 活跃用户数量的减少在二线城市最为明显，一线城市的变化可以忽略不计。</li>
+															<li>2. 我们的教育或校园用户出现了大量的流失。</li>
+														</ul>
+														<h3>洞察与假设</h3>
+														<p>这些模式导致了一个假设，即在7月和8月典型的暑假可能影响了我们的用户参与度，特别是教育用户。</p>
+														<h3>验证</h3>
+														<p>为了验证这个假设，我对来自二线城市和教育部门的用户进行了专注的访谈。反馈证实了这个假设，暑假成为使用率下降的主要驱动力。</p>
+														<h3>解决方案与策略</h3>
+														<p>有了这些洞察，我们制定了一套策略来抵消季节变化的影响：</p>
+														<ul>
+															<li>1. <b>季节性内容策略</b>：引入了针对非学术用户的季节主题和功能，以提高夏季的参与度。</li>
+															<li>2. <b>用户保留计划</b>：启动了针对性的保留计划，如夏季竞赛，奖励和互动活动，以在假期期间保持用户的参与度。</li>
+															<li>3. <b>用户反馈</b>：加强了反馈机制，以更好地了解用户需求，并相应地调整我们的产品。</li>
+														</ul>
+														<h3>结论</h3>
+														<p>通过结合用户互动，深入数据分析和专注用户访谈的混合方法，我们不仅理解了活跃用户数量突然下降的原因，而且制定了有效的策略来减轻影响。</p>
+													</div>
+
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+										
+										<li>
+											<div class="list_inner" id="CompetitorAnalysis">
+												<div class="image-wrapper">
+													<img src="img/portfolio/CompetitorAnalysis.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">竞品分析</span>
+													<h3 class="title"><a class="line_effect" href="https://www.figma.com/file/XPSfOTdijNoJN7f9Db1xxH/Overall-(Note-Editor)?node-id=7%3A17051&t=twCu8McFggVeAfp0-1" target="_blank">竞品分析案例：幼儿园 CMS 平台的分析 (2022)</a></h3>
+													<span class="tools">工具：Figma，思维导图</span>
+													<p>*注意：这是一个链接，点击后将会在新窗口打开一个<a href="https://www.figma.com/file/XPSfOTdijNoJN7f9Db1xxH/Overall-(Note-Editor)?node-id=7%3A17051&t=twCu8McFggVeAfp0-1" target="_blank"> Figma 文件</a>。</p>
+													<p>• 这是一个知识/内容管理系统的初步分析。</p>
+													<p>• 利用广泛的产品使用、公司财务和行业洞察，我总结了产品的架构、设计原则、用户基础和收入，然后提出了改进产品架构和模块组件的建议。</p>
+												</div>
+											</div>
+										</li>
+										
+										<li>
+											<div class="list_inner" id="UXDesign"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/UXDesign.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">用户体验设计</span>
+													<h3 class="title"><a class="line_effect" href="https://www.figma.com/file/iN3seLOr2aE0UmtNcxp8x3/Image-crop-controller?node-id=0%3A1&t=M1tmfNOGwDp16lZl-1" target="_blank">交互设计案例：图像剪裁控制器 (2019)</a></h3>
+													<span class="tools">工具：Figma</span>
+													<p>*注意：这是一个链接，点击后将会在新窗口打开一个<a href="https://www.figma.com/file/iN3seLOr2aE0UmtNcxp8x3/Image-crop-controller?node-id=0%3A1&t=M1tmfNOGwDp16lZl-1" target="_blank"> Figma 文件</a>。</p>
+													<p>• 这是一个复杂的图像剪裁控制器的详细交互设计展示。</p>
+													<p>• 该工具旨在在画布上可视化和操作图像，提供用于缩放和剪裁图像的各种控制模块功能。这些模块以复杂的方式相互连接，允许对图像的不同属性进行精确调整。</p>
+												</div>
+											</div>
+										</li>
+										
+										<li>
+											<div class=" list_inner" id="DataManagement"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/DataManagement.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">数据管理</span>
+													<h3 class="title "><a class="line_effect portfolio_popup">数据平台案例：SaaS 的数据管理系统 (2016)</a></h3>
+													<span class="tools">工具：Excel, Figma</span>
+													<p>• 数据跟踪、清洗、分析和展示系统的建设过程。</p>
+													<p>• 包括：关键指标识别，细分至基本数据列表，数据流设计，数据分析，以及数据展示。</p>
+													<p>• ps: 大屏展示相关的产品设计，也有相关案例。</p>
+												</div>
+											</div>
+										
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：Excel, Figma</p>
+														</div>
+													</div>
+													<div>
+														<h3>背景</h3>
+														<p>在我们的产品基础开发完成后，我们将重点转向了精细的运营和用户行为分析。因此，我被指定来组织产品的基础数据管理系统。</p>
+														<h3>沟通与指标确定</h3>
+														<p>通过跨部门沟通，我已经能够确定各个利益相关者最关心的数据指标。这需要对每个部门的运营和目标有深入的理解，以及将这些转化为可行的数据查询的能力。</p>
+														<p>例如：在一个与营销团队的项目中，我确定了他们需要的数据，包括客户获取成本，保留率，和生命周期价值。通过定义这些关键指标，我使营销团队能够衡量不同策略和活动的效果。</p>
+														<h3>数据指标的分解和解剖</h3>
+														<p>我将每个高级度量标准分解为底层的基础数据，如用户行为和产品性能。这个过程允许更细致的洞察和更好的问题诊断。</p>
+														<p>例如：我将客户获取成本分解为转化率和获取新客户的数量等因素。这为团队提供了关于哪个因素可以优化以降低成本的洞察。</p>
+														<h3>事件追踪与数据表组织</h3>
+														<p>设计数据收集的基础设施是一个关键的任务。我计划并实施了事件追踪机制，以有组织和逻辑的方式捕获必要的数据点。</p>
+														<img style="max-width: 400px;" src="img/portfolio/eventtracking.png" alt="" />
+														<h3>后台数据展示设计</h3>
+														<p>我确保处理后的数据以容易理解和可行的格式呈现。使用数据可视化工具，我创建了有效地代表数据和突出关键洞察的仪表板。</p>
+													</div>
+										
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner" id="Persona"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/Persona.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">用户画像</span>
+													<h3 class="title "><a class="line_effect portfolio_popup">用户画像案例：幼儿园教师的用户画像 (2023)</a></h3>
+													<span class="tools">工具：Notion, Questionnaire</span>
+													<p>• 幼儿园教师的用户画像。</p>
+													<P>• 研究方式包括：通过收集社交媒体和论坛的信息、与教师朋友交谈、发送问卷、收集他们的文件和日常时间表等。</P>
+													<p>• 这个用户画像是为早期产品设计的，所以相对来说较为宽泛，未进一步的进行用户分层。</p>
+												</div>
+											</div>
+										
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：Notion, Questionnaire</p>
+														</div>
+													</div>
+													<div>
+														<h3>背景</h3>
+														<p>一位幼儿园教师的用户画像。</p>
+														<p>这个用户画像是为早期产品设计的，所以性质上比较泛化。</p>
+														<p>然而，对于当前的用户故事来说，这个画像的详细程度已经足够了。</p>
+														<h3>内容</h3>
+														<img style="max-width: 600px;" src="img/portfolio/persona-example.png" alt="" />
+													</div>
+										
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+										
+										<li>
+											<div class="list_inner" id="UsabilityTesting"> 
+												<div class="image-wrapper">
+													<img src="img/portfolio/UsabilityTesting.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">可用性测试</span>
+													<h3 class="title "><a class="line_effect portfolio_popup">可用测试案例：图像背景移除工具的可用性测试 (2019)</a></h3>
+													<span class="tools">工具：Zoom, Keynote, TeamViewer</span>
+													<p>• 我们为新的在线抠图工具进行了可用性测试。测试包括各种难度级别的任务，并在完成后进行分析。</p>
+													<p>• 识别的主要问题包括用户交互期望不符、长时间任务中的不耐烦，以及超过边界时的调整困难。基于这些洞察，我们改进了功能指导、后端处理速度以及交互控件的定位和逻辑。</p>
+												</div>
+											</div>
+										
+											<!-- Modalbox Info Start -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<p>工具：Zoom, Keynote, TeamViewer</p>
+														</div>
+													</div>
+													<div>
+														<h3>背景</h3>
+														<p>在我们的核心图片剪辑功能完成后，我们决定创建一个在线抠图工具。当时，市场上类似的产品非常稀少，这导致我们对用户接受度和产品理解存在不确定性。因此，我们决定进行实际用户的可用性测试。</p>
+														<h3>团队和职责</h3>
+														<p>我们的可用性测试是与用户运营和设计的同事一起组织的。我负责设计整体测试过程，关键数据指标，编写测试问题/案例，并与设计团队一起完善交互细节。用户运营的同事从各行业有意识地招募了 3 个设计师用户和3个一般用户。</p>
+														<h3>测试任务说明</h3>
+														<p>我选择了四张难度递增的图片作为任务。</p>
+														<p>我分配了相关的过程任务，如上传和下载图片，调整画笔大小等。</p>
+														<p>任务说明表：</p>
+														<img style="max-width: 400px;" src="img/portfolio/ut_tasks.png" alt="" />
+														<p>整个过程都被录像，运营同事提供最小的指导。</p>
+														<h3>测试后分析</h3>
+														<p>测试后，我们分析了任务完成状态，任务消耗时间，并基于特定的评分进行了比较分析。</p>
+														<p>过程任务的分数：</p>
+														<img style="max-width: 400px;" src="img/portfolio/ut_tasks_marks.png" alt="" />
+														<h3>发现</h3>
+														<p>我们的分析揭示了以下关键洞察：</p>
+														<ul>
+															<li>1. 设计师倾向于以类似 Photoshop 的蒙版操作的方式处理任务，这与我们预期的交互不符。</li>
+															<img style="max-width: 400px;" src="img/portfolio/ut_failed.png" alt="" />
+															<li>2. 当图片剪辑过程超过3分钟时，用户的耐心明显减少。</li>
+															<li>3. 当他们的勾画超出图片边界时，用户无法进行完美的调整。</li>
+															<li>4. 我们一直在担心过程中不透明问题的接受度，但测试结果表明没有问题。</li>
+															<li>5. ...</li>
+														</ul>
+														<h3>可行的调整</h3>
+														<p>根据测试洞察，我们实施了以下改进：</p>
+														<ul>
+															<li>1. 我们为功能提供了更强的指导：用户第一次进入时会弹出引导视频，而且在页面底部增加了功能提示；</li>
+															<li>2. 我们提高了后端的图片剪辑处理效率，以减少图片剪辑时间；</li>
+															<li>3. 我们调整了交互控件的位置和逻辑；</li>
+															<li>4. ...</li>
+														</ul>
+														<h3>结论</h3>
+														<p>通过不断的迭代和改进，我们努力为用户提供更高效、更直观的在线图片剪辑工具，随着用户接受和认可度的提高，慢慢减少功能提示的醒目程度。</p>
+													</div>
+										
+											</div>
+											<!-- /Modalbox Info Start -->
+										</li>
+
+										<li>
+											<div class="list_inner">
+												<div class="image-wrapper">
+													<img src="img/portfolio/WorkFiles.png" alt="" />
+												</div>
+												<div class="details">
+													<span class="category">其他与工作相关或日常的文件</span>
+													<h3 class="title"><a class="line_effect portfolio_popup" href="#">其他与工作相关或日常的文件</a></h3>
+													<span class="tools">工具：Obsidian, OmniGraffle, Axure, OmniPlan, Office</span>
+													<p>• 如需更多详细信息，请随时与我联系。</p>
+												</div>
+											</div>
+										
+											<!-- 模态框信息开始 -->
+											<div class="hidden_content_portfolio">
+												<div class="popup_details">
+													<div class="main_details">
+														<div class="textbox">
+															<span class="tools">工具：Obsidian, OmniGraffle, Axure, OmniPlan, Office</span>
+														</div>
+													</div>
+													<h4>细节的力量</h4>
+													<div class="image">
+														<img src="img/portfolio/biglittledetails.png" alt="" />
+														<p>我非常注重产品的细节，并且喜欢尝试新产品，我收集各种产品的每一个好的细节。</p>
+														<p>我已经收集了这些多年，现在我在 Obsidian 的帮助下管理它们。</p>
+													</div>
+													<h4>工作流和序列图</h4>
+													<div class="image">
+														<img src="img/portfolio/workflow.png" alt="" />
+														<p>注册停车场和支付停车费的工作流和序列图</p>
+														<p>使用 OmniGraffle 绘制。</p>
+													</div>
+													<br>
+													<h4>项目管理</h4>
+													<div class="image">
+														<img src="img/portfolio/ProjectManagement.png" alt="" />
+														<p>使用 OmniPlan 制定项目计划并使用 Excel 跟踪任务。</p>
+														<p>过去的方式现在看来过时了，现在我们有更好的在线看板如 trello 来跟踪项目状态。</p>
+													</div>
+													<br>
+													
+										
+											</div>
+											<!-- 模态框信息结束 -->
+										
+										</li>
+										
+
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /PORTFOLIO -->
+					
+
+					<!-- NEWS -->
+					<div class="yu_section" id="news">
+						<div class="yu_news_cn fn_w_sminiboxes">
+							<div class="tm_content">
+								<div class="wrapper">
+									<div class="left fn_w_sminibox">
+										<div class="yu_sticky_section">
+											<div class="yu_title">
+												<span>- 观点</span>
+												<h3>行业相关的文章</h3>
+											</div>
+											<div class="yu_button">
+												<a class="anchor" href="#contact">联系我</a>
+											</div>
+										</div>
+									</div>
+									<div class="right fn_w_sminibox">
+										<div class="yu_sticky_section">
+											<div class="list">
+												<ul>
+													<li>
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>2020 07.16</span>
+																</div>
+																<div class="title">
+																	<h3><a href="https://blog.xiaoyu.io/2020/7-16-%E7%BA%BF%E4%B8%8A%E5%9B%A2%E9%98%9F%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7%E5%BA%94%E8%AF%A5%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/" target="_blank">线上团队设计工具应该是什么样的？(2020)</a></h3>
+																</div>
+															</div>
+
+														</div>
+													</li>
+													<li>
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>2020 09.01</span>
+																</div>
+																<div class="title">
+																	<h3><a href="https://blog.xiaoyu.io/2020/09-01-B%E7%AB%AF%E5%8D%8F%E5%90%8C%E4%BA%A7%E5%93%81%E7%9A%84%E6%94%B6%E8%B4%B9%E7%AD%96%E7%95%A5/" target="_blank">B 端在线协同产品的收费策略与问题 (2020)</a></h3>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_inner">
+															<div class="info">
+																<div class="meta">
+																	<img class="svg" src="img/svg/calendar.svg" alt="" /> <span>2018 05.28</span>
+																</div>
+																<div class="title">
+																	<h3><a href="https://blog.xiaoyu.io/2018/5-28-%E5%81%9C%E8%BD%A6/" target="_blank">城市智慧停车的机遇和挑战 (2018)</a></h3>
+																</div>
+															</div>
+														</div>
+													</li>
+													
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /NEWS -->
+
+
+
+					<!-- CONTACT -->
+					<!-- <div class="yu_section" id="contact">
+						<div class="yu_contact">
+							<div class="tm_content">
+								<div class="wrapper">
+									<div class="left">
+										<div class="yu_title">
+											<span>- 让我们联系</span>
+											<h3>取得联系</h3>
+										</div>
+										<div class="text">
+											<p>无论你想和我讨论什么，欢迎给我发送消息。</p>
+										</div>
+										<div class="info">
+											<ul>
+												<li>
+													<a href="tel:+8613581636006">135 8163 6006</a>
+												</li>
+												<li>
+													<a href="mailto:shawonline@gmail.com">shawonline@gmail.com</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="right">
+										<div class="fields">
+											<form action="/" method="post" class="contact_form" id="contact_form">
+												<div class="returnmessage" data-success="已收到您的信息，我将尽快与您联系。"></div>
+												<div class="empty_notice"><span>请填写必要的字段</span></div>
+												<div class="first">
+													<ul>
+														<li>
+															<input id="name" type="text" placeholder="你的名字" autocomplete="off">
+														</li>
+														<li>
+															<input id="email" type="text" placeholder="你的电子邮件" autocomplete="off">
+														</li>
+													</ul>
+												</div>
+												<div class="last">
+													<textarea id="message" placeholder="写点什么..."></textarea>
+												</div>
+												<div class="yu_button">
+													<a id="send_message" href="#">发送</a>
+												</div>
+
+											</form>
+										</div>
+									</div>
+								</div>	
+
+							</div>
+						</div>
+					</div> -->
+					
+					<!-- /CONTACT -->
+
+					<!-- Resume -->
+					<div class="yu_section" id="resume">
+						<div class="yu_resume">
+							<div class="tm_content">
+								<div class="yu_title">
+									<span>- 我的简历</span>
+									<h3>获取简历副本</h3>
+								</div>
+								<div class="wrapper">
+									<div class="left">
+										<div class="download-link">
+											<p>
+												👨‍💻
+											</p>
+											<p>
+												<a href="file/%E8%82%96%E5%AE%87-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86.pdf" target="_blank">中文版</a>   -   <a href="file/YuXiao_ProductManager.pdf" target="_blank">English Ver.</a>
+											</p>
+											<p>
+												<span class="text">截止 2023 年中</span>
+											</p>
+										</div>
+										<br>
+									</div>
+									<div class="right">
+										<a href="file/%E8%82%96%E5%AE%87-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86.pdf" target="_blank"><img class="cv-mockup" src="img/cv/CV_Mockup.jpg" alt=""></a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- /Resume -->
+				</div>
+			</div>
+			<!-- /MAINPART -->
+			
+		</div>
+		
+		<!-- CURSOR -->
+		<div class="mouse-cursor cursor-outer"></div>
+		<div class="mouse-cursor cursor-inner"></div>
+		<!-- /CURSOR -->
+		
+	</div>
+	<!-- / WRAPPER ALL -->
+	
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
+<script src="js/plugins.js"></script>
+<script src="js/init.js"></script>
+<!-- /SCRIPTS -->
+
+</body>
+</html>
